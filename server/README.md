@@ -1,55 +1,42 @@
-#  Reddit 🌈"💯👍💡 ⭐️ 🔥
-
+# OpenAI_Service 🌈💯👍💡 ⭐️ 🔥 🎉
+## Thằng nào có tiền thì đôn lết cho tao, ít thì 5  🥚 nhiều thì 1 cái 🚀
 ### Node.js TypeScript Express.js
 
 <br />
-
 
 ## Manual Installation
 
 1. Clone project
 
 ```shell
-git clone https://github.com/cavaldos/Node-template.git
+git clone https://github.com/cavaldos/OpenAI_Service.git
 ```
 
-2. Rename
+
+2. Move path
 
 ```shell
-mv  Node-template New-name
+cd OpenAI_Service
 ```
-
-3. Move path
-
-```shell
-cd New-name
-```
-
-4. Delete git
-
-```shell
-rm -rf .git
-```
-
-5. Install
+2. Install
 
 ```shell
 yarn add  # npm install  # pnpm install
 ```
 
-6. Run Production
+3. Run Production
 
 ```shell
 yarn run  start:prod
 ```
 
-8. Run Development
+4. Run Development
 
 ```shell
 yarn run dev
 ```
 
-9. Build
+5. Build
 
 ```shell
 yarn run build
@@ -72,9 +59,11 @@ docker run -dp 3000:3000  project-name .
 
 ```
 
+## Table of Contents
 
+<br />
 
-
+## [Features](#features)
 
 <br />
 
@@ -92,13 +81,13 @@ PORT=3000
 ├─ src
 │  ├─ api
 │  │  ├─ controllers
-│  │  │   └─ index.ts
+│  │  │  └─ index.ts
 │  │  ├─ middlewares
 │  │  │   └─ index.ts
 │  │  ├─ routes
-│  │  │   └─ index.ts
+│  │  │  └─ index.ts
 │  │  └─ validators
-│  │      └─ index.ts
+│  │     └─ index.ts
 │  ├─ config
 │  │  └─ index.ts
 │  ├─ loaders
@@ -124,26 +113,16 @@ PORT=3000
 
 List of available routes:
 
-**Routes**:
-cái bảng dưới này mai sửa lại nha 
+**User Auth Routes**:
 
-| object | Functionality | Method | Endpoint                       | Request Body            | Response                      |
-| ------ | ------------- | ------ | ------------------------------ | ----------------------- | ----------------------------- |
-| auth   | signin        | POST   | /auth/users                    | {name, email, password} | {user object}                 |
-|        | signup        | POST   | /auth/login                    | {email, password}       | {token}                       |
-|        | resetpassword | GET    | /auth/reset                    | -                       | {book objects array}          |
-| -      | -             | -      | -                              | -                       | -                             |
-| book   | get all book  | GET    | /book/getall                   | -                       | {matching book objects array} |
-|        | create book   | POST   | /book/create                   | -                       | {book object}                 |
-|        | delete book   | DELETE | /book/delete                   | {\_id}                  | -                             |
-|        | update        | PUT    | /api/return/:id                | {return_date}           | -                             |
-|        | pagingation   | GET    | /book/list?page={}&pageSize={} | -                       | {lend/return objects array}   |
-|        | find          | GET    | /book/{\_id}                   | -                       | {lend/return objects array}   |
-| -      | -             | -      | -                              | -                       | -                             |
-| user   | getall        | GET    | /user/getall                   | -                       | {lend/return objects array}   |
-|        | delete        | DELETE | /user/:\_id                    | -                       | {lend/return objects array}   |
-|        | update        | PUT    | /user/update                   | -                       | {lend/return objects array}   |
-|        | create        | POST   | /user/create                   | -                       | {lend/return objects array}   |
-|        | find          | GET    | /user/:\_id                    | -                       | {lend/return objects array}   |
+is coming soon
+
+**User Edit Routes**:
+
+is coming soon
+
+**Other User Routes**:
+
+is coming soon
 
 <br />

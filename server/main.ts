@@ -4,24 +4,25 @@ const dotenv = require("dotenv");
 const morgan = require("morgan");
 const cors = require("cors");
 var colors = require("ansicolors");
-const networkInterfaces = require("./src/config/IP.ts");
+const networkInterfaces = require("./config/IP");
 const IP = networkInterfaces.getIPAddresses();
 
 app.use(express.json());
 dotenv.config();
 app.use(morgan("tiny"));
 app.use(cors());
+app.use(express.urlencoded({ extended: true }));
 // =======================================
+
 
 // Routes
 app.use("/", (req, res) => {
-  res.send("Hello World , wellcome to my Open AI Service");
+  res.send("Hello World , wellcome to my reddit clone");
 });
 
-app.use(express.urlencoded({ extended: true }));
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 5000;
 const host = "0.0.0.0";
-const server = app.listen(port, host, () => {
+app.listen(port, () => {
   console.log(`\n  🚀  ➜ Local:    `, colors.blue(`http://localhost:${port}`));
   console.log(`  🚀  ➜ Network:  `, colors.green(`http://${IP}:${port}\n`));
 });

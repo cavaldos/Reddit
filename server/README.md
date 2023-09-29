@@ -1,48 +1,55 @@
-# Reddit 🌈"💯👍💡 ⭐️ 🔥
+#  Reddit 🌈"💯👍💡 ⭐️ 🔥
 
 ### Node.js TypeScript Express.js
 
 <br />
+
 
 ## Manual Installation
 
 1. Clone project
 
 ```shell
-git clone https://github.com/cavaldos/Reddit.git
+git clone https://github.com/cavaldos/Node-template.git
 ```
 
-2. Move path
+2. Rename
 
 ```shell
-cd Reddit
+mv  Node-template New-name
 ```
 
-3. Move server
+3. Move path
 
 ```shell
-cd server
+cd New-name
 ```
 
-4. Install
+4. Delete git
+
+```shell
+rm -rf .git
+```
+
+5. Install
 
 ```shell
 yarn add  # npm install  # pnpm install
 ```
 
-5. Run Production
+6. Run Production
 
 ```shell
 yarn run  start:prod
 ```
 
-6. Run Development
+8. Run Development
 
 ```shell
 yarn run dev
 ```
 
-7. Build
+9. Build
 
 ```shell
 yarn run build
@@ -55,15 +62,19 @@ yarn run build
 1.Build your updated version of the image, using the `docker build` command.
 
 ```shell
-docker build -t  reddit-clone-server .
+docker build -t  project-name .
 ```
 
 2.Start a new container using the updated code.
 
 ```shell
-docker run -dp 3000:3000  reddit-clone-server .
+docker run -dp 3000:3000  project-name .
 
 ```
+
+
+
+
 
 <br />
 
@@ -114,7 +125,7 @@ PORT=3000
 List of available routes:
 
 **Routes**:
-cái bảng dưới này mai sửa lại nha
+cái bảng dưới này mai sửa lại nha 
 
 | object | Functionality | Method | Endpoint                       | Request Body            | Response                      |
 | ------ | ------------- | ------ | ------------------------------ | ----------------------- | ----------------------------- |

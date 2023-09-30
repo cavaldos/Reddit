@@ -1,3 +1,6 @@
 {
-  "/page": "app/page.js"
+  "/signin/page": "app/signin/page.js",
+  "/subreddits/page": "app/subreddits/page.js",
+  "/r/[group]/page": "app/r/[group]/page.js",
+  "/user/[user]/page": "app/user/[user]/page.js"
 }

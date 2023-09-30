@@ -1,6 +1,4 @@
 
-import  store from "~/redux/store";
-
 
 const SiginPage: React.FC = () => {
 

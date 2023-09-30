@@ -20,7 +20,7 @@ const config: Config = {
       },
       colors: {
         dark: "#020203",
-        darkcontent: "#1B1A1A",
+        darkcontent: "#1A1B1A",
       },
       screens: {
         sm: "640px",

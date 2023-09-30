@@ -3,6 +3,10 @@
 # dependencies
 /node_modules
 /.pnp
+.next
+/.next
+/.next/
+
 
 # local env files
 .env.local

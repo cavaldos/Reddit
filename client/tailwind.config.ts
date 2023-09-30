@@ -15,7 +15,13 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
-      colors: {},
+      fontFamily: {
+        nunito: ["Nunito", "sans-serif", "ui-sans-serif", "system-ui"],
+      },
+      colors: {
+        dark: "#020203",
+        darkcontent: "#1B1A1A",
+      },
       screens: {
         sm: "640px",
         // => @media (min-width: 640px) { ... }
@@ -34,6 +40,6 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [require("daisyui")],
 };
 export default config

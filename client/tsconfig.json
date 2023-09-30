@@ -20,7 +20,8 @@
     ],
     "paths": {
       "~/*": ["./src/*"],
-      "instance": ["./src/service/axios.config"]
+      "instance": ["./src/service/axios.config"],
+      "icon": ["./src/assets/icon"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

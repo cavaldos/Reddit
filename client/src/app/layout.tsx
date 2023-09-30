@@ -1,8 +1,8 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import ReduxProvider from "~/app/ReduxProvider";
-
+import Header from "~/components/header/header";
+import MainReddits from "~/components/main/main";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,9 +19,8 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning={true}>
       <body suppressHydrationWarning={true} className={inter.className}>
-        <ReduxProvider>
-          {children}
-        </ReduxProvider>
+        <Header />
+        <MainReddits>{children}</MainReddits>
       </body>
     </html>
   );

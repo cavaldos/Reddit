@@ -7,7 +7,10 @@ interface Props {
 const MainReddits: React.FC<Props> = ({ children }) => {
   return (
     <>
-      <div className="main">{children}</div>
+      <div className="main bg-dark min-h-screen  pt-[70px] ">
+    dsf
+        {children}
+      </div>
     </>
   );
 };

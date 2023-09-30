@@ -9,7 +9,13 @@ const Header: React.FC = () => {
   return (
     <>
       <div className="h-[50px] bg-darkcontent  items-center r   border-b-[0.5px]  border-slate-600 fixed w-full	 flex  ">
-        <Image className="h-[35px] ml-5 my-auto" src="reddit.svg" alt="logo" />
+        <Image
+          className="h-[35px]  ml-4 mr-1 "
+          src="reddit.svg"
+          alt="logo"
+          width={30}
+          height={30}
+        />
         <h1 className="font-sans  font-medium text-2xl	ml-2 "> reddit</h1>
         <Select />
         <Search />

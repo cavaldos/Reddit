@@ -6,7 +6,7 @@ import { BsBookmark } from "react-icons/bs";
 const Post: React.FC = () => {
   return (
     <div className="post bg-dark w-[650px] min-h-[200px] min-h-auto flex rounded-md border border-[#353436] hover:border-gray-500 ">
-      <div className="bg-[#161617] p-1 px-2 justify-center items-center align-middle  rounded-l-md">
+      <div className="bg-[#161617] p-1 px-2 justify-center items-center align-middle  rounded-l-m d">
         <PiArrowFatUpLight className="text-gray-400 text-2xl mx-auto mt-3  " />
         <h1 className="text-gray-400 text-md pl-1 px-auto ">{15}</h1>
         <PiArrowFatDownLight className="text-gray-400 text-2xl mx-auto mb-1 " />

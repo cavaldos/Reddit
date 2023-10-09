@@ -1,0 +1,80 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Users\06vuc\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add *
+
+PATH: 
+  C:\Program Files\Microsoft MPI\Bin\;C:\Program Files (x86)\VMware\VMware Player\bin\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\Program Files\dotnet\;C:\Program Files (x86)\Microsoft SQL Server\160\Tools\Binn\;C:\Program Files\Microsoft SQL Server\160\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files\Microsoft SQL Server\160\DTS\Binn\;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\MongoDB\Server\6.0\bin;C:\Users\06vuc\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\06vuc\AppData\Local\Programs\Python\Python311\;C:\Users\06vuc\AppData\Local\Microsoft\WindowsApps;C:\Users\06vuc\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\06vuc\AppData\Roaming\npm;C:\Users\06vuc\AppData\Local\Programs\mongosh\;C:\Users\06vuc\.dotnet\tools;C:\msys64\ucrt64\bin;
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  18.16.1
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/*: Not found
+      at params.callback [as _callback] (C:\Users\06vuc\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:66145:18)
+      at self.callback (C:\Users\06vuc\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:140890:22)
+      at Request.emit (node:events:513:28)
+      at Request.<anonymous> (C:\Users\06vuc\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:141862:10)
+      at Request.emit (node:events:513:28)
+      at IncomingMessage.<anonymous> (C:\Users\06vuc\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:141784:12)
+      at Object.onceWrapper (node:events:627:28)
+      at IncomingMessage.emit (node:events:525:35)
+      at endReadableNT (node:internal/streams/readable:1359:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+
+npm manifest: 
+  {
+    "name": "reddit-server",
+    "version": "1.0.0",
+    "description": "",
+    "main": "src/main.ts",
+    "scripts": {
+      "start": "ts-node src/main.ts",
+      "dev": "tsnd --respawn  src/main.ts",
+      "build": "tsc src/main.ts --outDir ./build"
+    },
+    "dependencies": {
+      "ansicolors": "^0.3.2",
+      "apollo-server-express": "^3.12.1",
+      "dotenv": "^16.3.1",
+      "express": "^4.18.2",
+      "graphql": "^16.8.1",
+      "mongoose": "^7.5.3",
+      "morgan": "^1.10.0",
+      "openai": "^3.2.1",
+      "ts-node": "^10.9.1",
+      "ts-node-dev": "^2.0.0"
+    },
+    "devDependencies": {
+      "@tsconfig/node16": "^16.1.1",
+      "@types/node": "^20.5.7",
+      "cors": "^2.8.5",
+      "express": "^4.18.2",
+      "ts-node": "^10.9.1",
+      "ts-node-dev": "^2.0.0",
+      "typescript": "^5.2.2"
+    },
+    "keywords": [
+      "node",
+      "express",
+      "typescript",
+      "mvc",
+      "javascript"
+    ],
+    "repository": {
+      "type": "git"
+  
+    },
+    "author": "cavaldos",
+    "license": "ISC"
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

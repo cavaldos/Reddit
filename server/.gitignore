@@ -2,3 +2,4 @@
 .env
 /build
 push.sh
+/prisma/migrations

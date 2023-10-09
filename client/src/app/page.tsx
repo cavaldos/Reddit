@@ -1,11 +1,15 @@
 import Header from "~/components/header/header";
 import MainReddits from "~/components/main/main";
-
-const Home: React.FC<ChildNode> = ({ children }: any) => {
+import Post from "~/components/post";
+const Home: React.FC<ChildNode> = () => {
   return (
     <>
       <Header />
-      <MainReddits>{children}</MainReddits>
+      <MainReddits>
+        <div className="bg-gray-500 ">
+          dfgdsfg
+        </div>
+      </MainReddits>
     </>
   );
 };

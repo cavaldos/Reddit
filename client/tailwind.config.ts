@@ -87,7 +87,7 @@ const config: Config = {
   },
   plugins: [
     require("daisyui"),
-    require("tailwindcss-animate"),
+    // require("tailwindcss-animate"),
     require("@tailwindcss/typography"),
   ],
 };

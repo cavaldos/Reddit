@@ -24,6 +24,6 @@
       "icon": ["./src/assets/icon"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/signin/page.tsx"],
   "exclude": ["node_modules"]
 }

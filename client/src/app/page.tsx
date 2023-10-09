@@ -1,11 +1,13 @@
 import Header from "~/components/header/header";
 import MainReddits from "~/components/main/main";
-export default function Home() {
+
+const Home: React.FC<ChildNode> = ({ children }: any) => {
   return (
     <>
-     <h1>sdfsdfsdfdf</h1>
-  
-        
+      <Header />
+      <MainReddits>{children}</MainReddits>
     </>
   );
-}
+};
+
+export default Home;

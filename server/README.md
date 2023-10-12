@@ -13,6 +13,7 @@ List of available routes:
 **Post Routes**:
 
 | object | Functionality | Method | Endpoint                       | Request Body            | Response                      |
+| ------ | ------------- | ------ | ------------------------------ | ----------------------- | ----------------------------- |
 | post   | get all book  | GET    | /post/getall                   | -                       | {matching post objects array} |
 |        | create post   | POST   | /post/create                   | -                       | {post object}                 |
 |        | delete post   | DELETE | /post/delete                   | {\_id}                  | -                             |
@@ -23,6 +24,7 @@ List of available routes:
 **Post Routes**:
 
 | object | Functionality | Method | Endpoint                       | Request Body            | Response                      |
+| ------ | ------------- | ------ | ------------------------------ | ----------------------- | ----------------------------- |
 | user   | getall        | GET    | /user/getall                   | -                       | {lend/return objects array}   |
 |        | delete        | DELETE | /user/:\_id                    | -                       | {lend/return objects array}   |
 |        | update        | PUT    | /user/update                   | -                       | {lend/return objects array}   |
@@ -32,6 +34,7 @@ List of available routes:
 **Post Routes**:
 
 | object | Functionality | Method | Endpoint                       | Request Body            | Response                      |
+| ------ | ------------- | ------ | ------------------------------ | ----------------------- | ----------------------------- |
 | user   | getall        | GET    | /user/getall                   | -                       | {lend/return objects array}   |
 |        | delete        | DELETE | /user/:\_id                    | -                       | {lend/return objects array}   |
 |        | update        | PUT    | /user/update                   | -                       | {lend/return objects array}   |

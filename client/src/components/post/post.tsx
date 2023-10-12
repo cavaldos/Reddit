@@ -3,6 +3,29 @@ import { GoComment } from "react-icons/go";
 
 import { PiShareFat } from "react-icons/pi";
 import { BsBookmark } from "react-icons/bs";
+
+interface PostInterface {
+  id: string;
+  title: string;
+  body: string;
+  upvotes: number;
+  downvotes: number;
+  comments: number;
+  user: {
+    id: string;
+    username: string;
+    avatar: string;
+  };
+  createdAt: string;
+  updatedAt: string;
+
+}
+
+export interface PostProps {
+  post: PostInterface;
+}
+
+
 const Post: React.FC = () => {
   return (
     <div className="post bg-dark w-[650px] min-h-[200px] min-h-auto flex rounded-[5px] border-[1.9px] border-[#353436] hover:border-gray-500 ">

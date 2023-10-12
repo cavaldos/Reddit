@@ -9,6 +9,10 @@ const config: Config = {
   darkMode: "class",
   mode: "jit",
   theme: {
+    container: {
+      center: true,
+      padding: "5px",
+    },
     extend: {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
@@ -61,15 +65,15 @@ const config: Config = {
         md: `calc(var(--radius) - 2px)`,
         sm: "calc(var(--radius) - 4px)",
       },
-    
+
       keyframes: {
         "accordion-down": {
-          from: { height: '0' },
+          from: { height: "0" },
           to: { height: "var(--radix-accordion-content-height)" },
         },
         "accordion-up": {
           from: { height: "var(--radix-accordion-content-height)" },
-          to: { height: '0' },
+          to: { height: "0" },
         },
       },
       animation: {
@@ -77,7 +81,7 @@ const config: Config = {
         "accordion-up": "accordion-up 0.2s ease-out",
       },
       screens: {
-        sm: "640px", // => @media (min-width: 640px) { ... }
+        sm: "340px", // => @media (min-width: 640px) { ... }
         md: "768px", // => @media (min-width: 768px) { ... }
         lg: "1024px", // => @media (min-width: 1024px) { ... }
         xl: "1280px", // => @media (min-width: 1280px) { ... }

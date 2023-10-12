@@ -10,6 +10,8 @@ const startWebSocketServer = require("./utils/socket");
 const http = require("http");
 const server = http.createServer(app);
 
+
+
 app.use(express.json());
 dotenv.config();
 app.use(morgan("tiny"));
@@ -17,14 +19,19 @@ app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 // =======================================
 
+const authRouter = require("./api/routes/auth.route")
+const postRouter = require("./api/routes/post.route");
+const userRouter = require("./api/routes/user.route");
 // Routes
-app.use("/", (req, res) => {
-  res.send("Hello World , wellcome to my reddit clone");
-});
+app.use("/auth", authRouter);
+app.use("/user", userRouter);
+app.use("/post", postRouter);
+
+
+
 
 const port = process.env.PORT || 5000;
 const host = "0.0.0.0";
-
 server.listen(port, () => {
   console.log(`\n  🚀  ➜ Local:    `, colors.blue(`http://localhost:${port}`));
   console.log(`  🚀  ➜ Network:  `, colors.green(`http://${IP}:${port}\n`));

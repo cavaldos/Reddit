@@ -1,13 +1,6 @@
 const router = require("express").Router();
+const testController = require("../controllers/index");
 
-router.post("/p1", (res, req) => {
-  console.log("p1");
-});
-router.post("/p2", (res, req) => {
-  console.log("p1");
-});
-router.post("/p3", (res, req) => {
-  console.log("p1");
-});
+router.get("/posttest", testController.test);
 
 module.exports = router;

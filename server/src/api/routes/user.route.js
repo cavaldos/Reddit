@@ -1,14 +1,6 @@
 const router = require("express").Router();
+const testController = require("../controllers/index");
 
-router.get("/get", (res, req) => {
-  console.log("p1");
-});
-router.put("/put", (res, req) => {
-  console.log("p1");
-});
-router.post("/post", (res, req) => {
-  console.log("p1");
-});
-
+router.get("/usertest", testController.test);
 
 module.exports = router;

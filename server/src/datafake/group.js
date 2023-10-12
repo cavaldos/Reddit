@@ -1,0 +1,6 @@
+//  group reddit
+const group = [
+    {
+        
+    }
+]

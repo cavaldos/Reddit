@@ -7,8 +7,7 @@ const Home: React.FC<ChildNode> = () => {
     <>
       <Header />
       <MainReddits>
-        <div className=" flex ">
-        
+        <div className=" flex">
           <ListPost />
           <Sub />
         </div>

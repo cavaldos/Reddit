@@ -36,6 +36,9 @@ const Premium: React.FC = () => {
 };
 
 const Create: React.FC = () => {
+  const router = useRouter();
+
+
   return (
     <>
       <div className="min-h-[90px] w-full bg-darkcontent  rounded-[4px]	 border border-gray-600 p-1  flex flex-col gap-2 ">
@@ -56,7 +59,9 @@ const Create: React.FC = () => {
 
         <div className="   w-[94%] mx-auto border-t-[1px] border-gray-700 mb-3	  h-2"></div>
 
-        <button className="bg-gray-300 hover:bg-gray-400 text-dark text-sm font-bold bottom-2 mx-auto left-3 right-3 h-8 rounded-3xl  w-[94%] ">
+        <button
+            onClick={() => router.push("/submit")}
+          className="bg-gray-300 hover:bg-gray-400 text-dark text-sm font-bold bottom-2 mx-auto left-3 right-3 h-8 rounded-3xl  w-[94%] ">
           Create Post
         </button>
         <button className=" text-white  hover:bg-gray-950 border text-sm font-medium bottom-2 mx-auto left-3 right-3 h-8 rounded-3xl  w-[94%]">

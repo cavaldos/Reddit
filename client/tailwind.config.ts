@@ -12,7 +12,6 @@ const config: Config = {
     container: {
       center: true,
       padding: "5px",
-      
     },
 
     extend: {
@@ -27,8 +26,8 @@ const config: Config = {
       colors: {
         dark: "#020203",
         darkcontent: "#1A1B1A",
-
-        border: "hsl(var(--border))",
+        border: "#4c4b4b",
+        ct:"#7F7E80", 
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
@@ -37,7 +36,7 @@ const config: Config = {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
         },
-       
+
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
           foreground: "hsl(var(--secondary-foreground))",

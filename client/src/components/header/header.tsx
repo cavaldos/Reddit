@@ -1,14 +1,13 @@
 import Search from "~/components/header/search";
 import Select from "~/components/header/select";
 import { BsChatDots } from "react-icons/bs";
-import { FaRegBell } from "react-icons/fa";
 import { BellOutlined } from "@ant-design/icons";
 import Account from "~/components/header/account";
 import Image from "next/image";
 const Header: React.FC = () => {
   return (
     <>
-      <div className="h-[50px] bg-darkcontent  items-center r   border-b-[0.5px]  border-slate-600 fixed w-full	 flex  ">
+      <div className="h-[50px] bg-darkcontent items-center border-b-[0.5px]  border-slate-600 fixed w-full flex z-50	  ">
         <Image
           className="h-[35px]  ml-4 mr-1 "
           src="reddit.svg"

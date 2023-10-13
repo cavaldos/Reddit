@@ -1,128 +1,46 @@
-# OpenAI_Service 🌈💯👍💡 ⭐️ 🔥 🎉
-## Thằng nào có tiền thì đôn lết cho tao, ít thì 5  🥚 nhiều thì 1 cái 🚀
-### Node.js TypeScript Express.js
-
-<br />
-
-## Manual Installation
-
-1. Clone project
-
-```shell
-git clone https://github.com/cavaldos/OpenAI_Service.git
-```
-
-
-2. Move path
-
-```shell
-cd OpenAI_Service
-```
-2. Install
-
-```shell
-yarn add  # npm install  # pnpm install
-```
-
-3. Run Production
-
-```shell
-yarn run  start:prod
-```
-
-4. Run Development
-
-```shell
-yarn run dev
-```
-
-5. Build
-
-```shell
-yarn run build
-```
-
-## Docker
-
-### Build docker
-
-1.Build your updated version of the image, using the `docker build` command.
-
-```shell
-docker build -t  project-name .
-```
-
-2.Start a new container using the updated code.
-
-```shell
-docker run -dp 3000:3000  project-name .
-
-```
-
-## Table of Contents
-
-<br />
-
-## [Features](#features)
-
-<br />
-
-## [Environment Variables](#environment-variables)
-
-```shell
-PORT=3000
-```
-
-<br />
-
-## [Project Structure](#project-structure)
-
-```js
-├─ src
-│  ├─ api
-│  │  ├─ controllers
-│  │  │  └─ index.ts
-│  │  ├─ middlewares
-│  │  │   └─ index.ts
-│  │  ├─ routes
-│  │  │  └─ index.ts
-│  │  └─ validators
-│  │     └─ index.ts
-│  ├─ config
-│  │  └─ index.ts
-│  ├─ loaders
-│  │  └─ index.ts
-│  ├─ models
-│  │  └─ index.ts
-│  └─ utils
-│      └─ index.ts
-├─ main.ts
-├─ tsconfig.json
-├─ .tsconfig.build.json
-├─ .env
-├─ README.md
-├─ .gitignore
-├─ LICENSE
-├─ package-lock.json
-└─ package.json
-```
-
-## [API Documentation](#api-documentation)
-
 ### API Endpoints
 
 List of available routes:
 
-**User Auth Routes**:
+**Auth Routes**:
 
-is coming soon
+| object | Functionality | Method | Endpoint            | Request Body            | Response             |
+| ------ | ------------- | ------ | ------------------- | ----------------------- | -------------------- |
+| auth   | signin        | POST   | /auth               | {name, email, password} | {user object}        |
+|        | signout       | GET    | /auth/signout       | -                       | {post objects array} |
+|        | register      | POST   | /auth/login         | {email, password}       | {token}              |
+|        | resetpassword | GET    | /auth/resetPassword | -                       | {post objects array} |
+|        | refreshtoken  | GET    | /auth/refreshToken  | -                       | {post objects array} |
 
-**User Edit Routes**:
+**Post Routes**:
 
-is coming soon
+| object | Functionality | Method | Endpoint                       | Request Body  | Response                      |
+| ------ | ------------- | ------ | ------------------------------ | ------------- | ----------------------------- |
+| post   | get all book  | GET    | /post/getall                   | -             | {matching post objects array} |
+|        | create post   | POST   | /post/create                   | -             | {post object}                 |
+|        | delete post   | DELETE | /post/delete                   | {\_id}        | -                             |
+|        | update        | PUT    | /api/return/:id                | {return_date} | -                             |
+|        | pagingation   | GET    | /post/list?page={}&pageSize={} | -             | {lend/return objects array}   |
+|        | find          | GET    | /post/{\_id}                   | -             | {lend/return objects array}   |
 
-**Other User Routes**:
+**Post Routes**:
 
-is coming soon
+| object | Functionality | Method | Endpoint     | Request Body | Response                    |
+| ------ | ------------- | ------ | ------------ | ------------ | --------------------------- |
+| user   | getall        | GET    | /user/getall | -            | {lend/return objects array} |
+|        | delete        | DELETE | /user/:\_id  | -            | {lend/return objects array} |
+|        | update        | PUT    | /user/update | -            | {lend/return objects array} |
+|        | create        | POST   | /user/create | -            | {lend/return objects array} |
+|        | find          | GET    | /user/:\_id  | -            | {lend/return objects array} |
+
+**Post Routes**:
+
+| object | Functionality | Method | Endpoint     | Request Body | Response                    |
+| ------ | ------------- | ------ | ------------ | ------------ | --------------------------- |
+| user   | getall        | GET    | /user/getall | -            | {lend/return objects array} |
+|        | delete        | DELETE | /user/:\_id  | -            | {lend/return objects array} |
+|        | update        | PUT    | /user/update | -            | {lend/return objects array} |
+|        | create        | POST   | /user/create | -            | {lend/return objects array} |
+|        | find          | GET    | /user/:\_id  | -            | {lend/return objects array} |
 
 <br />

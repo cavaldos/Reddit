@@ -1,15 +1,20 @@
 import React from "react";
-import Post from "~/components/post";
 
 interface Props {
   children: React.ReactNode;
+  width?: string;
+  bg?: string;
 }
 
-const MainReddits: React.FC<Props> = ({ children }) => {
+const MainReddits: React.FC<Props> = ({ children, width, bg }) => {
+  const size = width || "52vw";
+  const background = bg || "#dark";
+
   return (
     <>
-      <div className="main bg-dark min-h-screen  pt-[70px] ">
-        <Post />
+      <div
+        className={`flex justify-center w-[${size}] bg-${background} min-h-screen pt-[70px] container`}
+      >
         {children}
       </div>
     </>

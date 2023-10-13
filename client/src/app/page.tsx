@@ -1,11 +1,19 @@
 import Header from "~/components/header/header";
 import MainReddits from "~/components/main/main";
-export default function Home() {
+import ListPost from "~/components/post/listpost";
+import Sub from "~/components/post/sub";
+const Home: React.FC<ChildNode> = () => {
   return (
     <>
-     <h1>sdfsdfsdfdf</h1>
-  
-        
+      <Header />
+      <MainReddits>
+        <div className=" flex">
+          <ListPost />
+          <Sub />
+        </div>
+      </MainReddits>
     </>
   );
-}
+};
+
+export default Home;

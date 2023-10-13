@@ -7,10 +7,10 @@ const Home: React.FC<ChildNode> = () => {
     <>
       <Header />
       <MainReddits>
-        <div className="bg-gray-500 flex ">
+        <div className=" flex ">
+        
           <ListPost />
           <Sub />
-
         </div>
       </MainReddits>
     </>

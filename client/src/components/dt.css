@@ -1,0 +1,13 @@
+.text-editor {
+  /* Các kiểu tùy chỉnh cho TextEditor chung */
+}
+
+.text-editor.dark-mode {
+  background-color: #333;
+  color: #fff;
+}
+
+.mode-toggle {
+  text-align: right;
+  margin-bottom: 10px;
+}

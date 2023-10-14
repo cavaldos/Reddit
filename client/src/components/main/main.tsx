@@ -13,9 +13,9 @@ const MainReddits: React.FC<Props> = ({ children, width, bg }) => {
   return (
     <>
       <div
-        className={`flex justify-center w-[${size}] bg-${background} min-h-screen pt-[70px] container`}
+        className={`flex justify-center w-[${size}] bg-${background} min-h-screen pt-[70px] container `}
       >
-        {children}
+        <div className="flex">{children}</div>
       </div>
     </>
   );

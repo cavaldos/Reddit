@@ -1,6 +1,5 @@
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
-const cookieParser = require('cookie-parser');
 import { db } from '../../config/database';
 
 const generateAccessToken = (userId) => {

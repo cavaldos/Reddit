@@ -18,7 +18,7 @@
     "incremental": true
   },
   "paths": {
-    "~/*": ["src/*"]
+    "~/*": ["src/*"],
   },
   "include": ["**/*.ts", "**/*.tsx", "src/**/*.js", "src/**/*"],
   "exclude": ["node_modules"]

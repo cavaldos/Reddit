@@ -1,80 +1,46 @@
-const post = require("../../datafake/post");
+import { response } from "express";
+import { PostValidator } from "../validators/post";
+import { z } from "zod";
+const postController =
+{
+    read: async(req, res) =>{
 
-const postController = {
-  getall: async  (req, res) => {
-    try {
-      res.status(200).json({
-        message: "getall",
-        data: post,
-      });
-    } catch (error) {
-      res.status(500).json({
-        message: "error",
-        data: error,
-      });
+    },
+    create: async (req, res) => {
+        try {
+            const body = await req.json();
+            const { title, content, subredditId } = PostValidator.parse(body);
+            const subscription = await db.subscription.findFirst({
+                where: {
+                    subredditId,
+                    userId: req.body.userId,
+                }
+            });
+            if (!subscription) {
+                return res.status(403).json({ message: 'Subscribe to post' });
+            }
+            await db.post.create({
+                data: {
+                    title, content, authorId: req.body.userId, subredditId
+                }
+            });
+            res.status(201).json({ message: 'Ok' });
+        } catch (error) {
+            if(error instanceof z.ZodError){
+                return res.status(400).json({error: error.message});
+            }
+            return res.status(500).json({message: 'Could not post to subreddit at this time. Please try later'});
+        }
+    },
+    vote: async(req, res) =>{
+
+    },
+    subscribe: async (req, res) =>{
+
+    },
+    unsubscribe: async(req, res)=>{
+
     }
-  },
-  getbyid: async  (req, res) => {
-    try {
-      const { id } = req.params;
-      const data = post.find((item) => item.id === id);
-      res.status(200).json({
-        message: "getbyid",
-        data,
-      });
-    } catch (error) {
-      res.status(500).json({
-        message: "error",
-        data: error,
-      });
-    }
-  },
-  create: async  (req, res) => {
-    try {
-      const { body } = req;
-      post.push(body);
-      res.status(200).json({
-        message: "create",
-        data: post,
-      });
-    } catch (error) {
-      res.status(500).json({
-        message: "error",
-        data: error,
-      });
-    }
-  },
-  delete: async  (req, res) => {
-    try {
-      const { id } = req.params;
-      const data = post.filter((item) => item.id !== id);
-      res.status(200).json({
-        message: "delete",
-        data,
-      });
-    } catch (error) {
-      res.status(500).json({
-        message: "error",
-        data: error,
-      });
-    }
-  },
-  update: async  (req, res) => {
-    try {
-      const { id } = req.params;
-      const { body } = req;
-      const index = post.findIndex((item) => item.id === id);
-      post[index] = body;
-      res.status(200).json({
-        message: "update",
-        data: post,
-      });
-    } catch (error) {
-      res.status(500).json({
-        message: "error",
-        data: error,
-      });
-    }
-  },
-};
+
+}
 module.exports = postController;

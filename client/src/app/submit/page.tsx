@@ -8,10 +8,10 @@ import { GoImage } from "react-icons/go";
 import { BiLinkAlt } from "react-icons/bi";
 import { BsPostcard } from "react-icons/bs";
 import { IoAdd } from "react-icons/io5";
-import TextEditor from "~/components/editor";
+import dynamic from "next/dynamic";
 
+const TextEditor = dynamic(() => import("~/components/editor"), { ssr: false });
 import "react-quill/dist/quill.snow.css";
-
 
 const CreatePost: React.FC = () => {
   const [value, setValue] = useState("");
@@ -56,7 +56,7 @@ const CreatePost: React.FC = () => {
             className=" text-gray-200 bg-[#272729] placeholder-gray-500  border-border p-2 rounded-[3px]  h-[40px] outline-none border  ml-4 mr-4  my-3 min-w-[95.5%] inner-div mx-4 "
           />
           <div className=" inner-div border-[1px] border-border rounded-[3px] mx-4 mb-3">
-            <TextEditor/>
+            <TextEditor />
             {/* <ReactQuill
               
               value={value}
@@ -83,9 +83,7 @@ const CreatePost: React.FC = () => {
             </button>
           </div>
           <div className="flex flex-row justify-between items-center mx-4">
-            <h1 className="text-gray-400 font-bold text-sm">
-           
-            </h1>
+            <h1 className="text-gray-400 font-bold text-sm"></h1>
             <button className="bg-slate-300 text-ct font-bold text-sm rounded-3xl px-6 py-2 mx-4 mb-3">
               Post
             </button>
@@ -95,7 +93,6 @@ const CreatePost: React.FC = () => {
               <h1 className="text-gray-400 font-bold text-sm">
                 This is a preview of your post
               </h1>
-              
             </div>
           </div>
         </div>

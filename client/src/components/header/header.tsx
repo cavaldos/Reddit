@@ -5,12 +5,14 @@ import { BellOutlined } from "@ant-design/icons";
 import Account from "~/components/header/account";
 import Image from "next/image";
 const Header: React.FC = () => {
+  
+  const src="reddit.svg" || "https://www.redditstatic.com/avatars/avatar_default_19_0079D3.png"
   return (
     <>
-      <div className="h-[50px] bg-darkcontent items-center border-b-[0.5px]  border-slate-600 fixed w-full flex z-50	  ">
+      <div className="h-[50px] bg-darkcontent items-center border-b-[0.5px]  border-slate-600 fixed w-full flex z-40	  ">
         <Image
           className="h-[35px]  ml-4 mr-1 "
-          src="reddit.svg"
+          src={src}
           alt="logo"
           width={30}
           height={30}

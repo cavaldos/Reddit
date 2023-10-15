@@ -3,7 +3,9 @@ import { BsLink45Deg } from "react-icons/bs";
 const CreatePost: React.FC = () => {
   return (
     <>
-      <div className="flex flex-row bg-darkcontent border rounded-[4px] border-gray-600  hover:border-gray-500 h-[60px] mb-2">
+      <div
+       
+        className="flex flex-row bg-darkcontent border rounded-[4px] border-gray-600  hover:border-gray-500 h-[60px] mb-2">
         <img
           src="./reddit.svg"
           alt="reddit"

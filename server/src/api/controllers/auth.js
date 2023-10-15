@@ -1,6 +1,7 @@
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
-import { db } from '../../config/database';
+const db = require('../../config/database');
+
 
 const generateAccessToken = (userId) => {
   return jwt.sign({ userId }, process.env.JWT_SECRET, { expiresIn: '1d' });
@@ -19,11 +20,10 @@ const authController = {
     const { email, password } = req.body;
 
     try {
-      const user = await db.user.findUnique({ where: { email } });
+      const user = await db.user.findUnique({
+        where: { email: email }
+      });
 
-      if (!user) {
-        throw new Error('Invalid email or password');
-      }
 
       const isPasswordValid = await bcrypt.compare(password, user.password);
 
@@ -35,13 +35,13 @@ const authController = {
       const refreshToken = generateRefreshToken(user.id);
       res.cookie('accessToken', accessToken, { httpOnly: true });
       res.cookie('refreshToken', refreshToken, { httpOnly: true });
-      res.json({ user });
+      res.status(200).json({ user });
     } catch (error) {
       res.status(500).json({ error: error.message });
     }
   },
   logout: async (req, res) => {
-
+    
     res.clearCookie('accessToken');
     res.clearCookie('refreshToken');
 
@@ -50,8 +50,12 @@ const authController = {
   register: async (req, res) => {
     const { email, username, password } = req.body;
 
+
     try {
-      const existingUser = await db.user.findUnique({ where: { email } });
+      if (!email) {
+        throw new Error('Email is required');
+      }
+      const existingUser = await db.user.findUnique({ where: { email: email } });
 
       if (existingUser) {
         throw new Error('Email already exists');
@@ -77,7 +81,7 @@ const authController = {
         },
       });
 
-      res.status(201).json({ user });
+      res.status(201).json({ name: user.username });
     } catch (error) {
       res.status(500).json({ error: error.message });
     }
@@ -97,8 +101,9 @@ const authController = {
         where: { id: user.id },
         data: { password: hashedPassword },
       });
-
-      res.status(200).json({ message: 'Password reset successful' });
+      res.clearCookie('accessToken');
+      res.clearCookie('refreshToken');
+      res.status(200).json({ message: "Ok" });
     }
     catch (error) {
       res.status(500).json({ error: error.message });

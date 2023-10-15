@@ -14,7 +14,8 @@ const {
   authRouter,
   postRouter,
   userRouter,
-  commentRouter,
+  
+  subredditRouter,
 } = require("./api/routes/index");
 
 app.use(express.json());
@@ -28,7 +29,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use("/auth", authRouter);
 app.use("/user", userRouter);
 app.use("/post", postRouter);
-app.use("/comment", commentRouter);
+
+app.use("/subreddit", subredditRouter);
+
 
 const port = process.env.PORT || 5000;
 const host = "0.0.0.0";

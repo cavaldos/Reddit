@@ -1,18 +1,20 @@
 import React, { useState } from "react";
-import { Editor } from "react-draft-wysiwyg";
+// import { Editor } from "react-draft-wysiwyg";
 import { EditorState, convertToRaw } from "draft-js";
 import draftToHtml from "draftjs-to-html";
 
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
-import "./dt.css"; // Import CSS file for custom styles
+
+import dynamic from "next/dynamic";
+const Editor = dynamic(
+  () => import("react-draft-wysiwyg").then((mod) => mod.Editor),
+  { ssr: false }
+);
 
 const TextEditor = () => {
-  const [editorState, setEditorState] = useState(EditorState.createEmpty());
-  const [isDarkMode, setIsDarkMode] = useState(false);
+    const editor = typeof window === "object" ? Editor : null;
 
-  const toggleDarkMode = () => {
-    setIsDarkMode(!isDarkMode);
-  };
+  const [editorState, setEditorState] = useState(EditorState.createEmpty());
 
   const onEditorStateChange = (newEditorState) => {
     setEditorState(newEditorState);
@@ -21,22 +23,17 @@ const TextEditor = () => {
   console.log(draftToHtml(convertToRaw(editorState.getCurrentContent())));
 
   return (
-    <div className={`text-editor ${isDarkMode ? "dark-mode" : ""}`}>
-      <div className="mode-toggle">
-        <button onClick={toggleDarkMode}>
-          {isDarkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}
-        </button>
-      </div>
+    <div>
+     {editor && 
       <Editor
         editorState={editorState}
-        toolbarClassName={`toolbarClassName ${
-          isDarkMode ? "dark-toolbar" : ""
-        }`}
+        toolbarClassName="toolbarClassName"
         wrapperClassName="wrapperClassName"
         editorClassName="editorClassName"
         onEditorStateChange={onEditorStateChange}
         placeholder="Write something here..."
       />
+     }
       <textarea
         disabled
         value={draftToHtml(convertToRaw(editorState.getCurrentContent()))}

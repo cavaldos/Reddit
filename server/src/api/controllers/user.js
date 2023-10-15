@@ -69,17 +69,25 @@ const userController = {
       if (!userId) {
         return res.status(400).json({ error: 'User ID and image are required' });
       }
+      
       const upload = multer.single('file');
 
       upload(req, res, async function (err) {
         if (err) {
-          
           return res.status(500).json({ error: err.message });
-        }
-
-       
+        }       
         const image = req.file;
-
+        const user = await db.user.findFirst({
+          where: {
+            id: userId
+          },
+          select:{
+            image: true
+          }
+        });
+        if(user.image){
+          fs.unlinkSync(user.image);
+        }
 
         await db.user.update({
           where: {

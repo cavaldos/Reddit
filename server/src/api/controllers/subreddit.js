@@ -6,8 +6,6 @@ const db = require('../../config/database');
 const subredditController = {
     create: async (req, res) => {
         try {
-
-
             //const name = body.name;
             const { name } = SubredditValidator.parse(req.body);
             const subredditExists = await db.subreddit.findFirst({

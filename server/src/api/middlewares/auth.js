@@ -1,5 +1,4 @@
 const jwt = require('jsonwebtoken');
-const { db } = require('../../config/database');
 
 const verifyToken = (token) => {
     return jwt.verify(token, process.env.JWT_SECRET);
@@ -8,21 +7,24 @@ const verifyToken = (token) => {
 const authMiddleware =
 {
     access: (req, res, next) => {
-        const accessToken = req.cookies.accessToken;
-
+        const authorizationHeader = req.get('Authorization');
+    
         try {
-            if (accessToken) {
-                const decodedToken = verifyToken(accessToken);
+            if (authorizationHeader) {
+                const token = authorizationHeader.replace('Bearer ', '');
+                const decodedToken = verifyToken(token);
                 req.body.userId = decodedToken.userId;
+                
             } else {
-                throw new Error('Access token not provided');
+                return res.status(401).json({message :'Access token not provided'});
             }
         } catch (error) {
             return res.status(401).json({ error: error.message });
         }
-
+    
         next();
     }
+    
 };
 
 module.exports = authMiddleware;

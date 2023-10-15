@@ -1,6 +1,7 @@
-import { z } from 'zod'
+const z = require("zod");
 
-export const PostValidator = z.object({
+
+const PostValidator = z.object({
   title: z
     .string()
     .min(3, {
@@ -13,4 +14,4 @@ export const PostValidator = z.object({
   content: z.any(),
 })
 
-export type PostCreationRequest = z.infer<typeof PostValidator>
+module.exports = {PostValidator};

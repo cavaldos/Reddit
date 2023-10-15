@@ -43,9 +43,7 @@ const subredditController = {
 
     },
     search: async (req, res) => {
-        const url = new URL(req.url);
-        const q = url.searchParams.get('q');
-
+        const q = req.query.q;
         if (!q) return res.status(400).json({ message: "Invalid query" });
 
         const results = await db.subreddit.findMany({
@@ -56,6 +54,7 @@ const subredditController = {
             },
             include: {
                 _count: true,
+                
             },
             take: 5,
         })

@@ -15,6 +15,7 @@ const authMiddleware =
                 const decodedToken = verifyToken(token);
                 req.body.userId = decodedToken.userId;
                 
+                
             } else {
                 return res.status(401).json({message :'Access token not provided'});
             }

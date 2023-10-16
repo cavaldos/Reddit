@@ -3,5 +3,7 @@ const userController = require("../controllers/user");
 const authMiddleware = require("../middlewares/auth");
 
 router.patch("/username", authMiddleware.access, userController.changeUsername);
-router.get("/", userController.getUserInfo);
+router.post("/image", authMiddleware.access, userController.uploadImage);
+router.get("/:id/image/", userController.downloadImagine);
+router.get("/:id", userController.getUserInfo);
 module.exports = router;

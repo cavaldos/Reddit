@@ -20,21 +20,23 @@ List of available routes:
 
 **Subreddit Routes**:
 
-| object    | Functionality                | Method | Endpoint                | Request Header | Request Body                    | Response             |
-| --------- | ---------------------------- | ------ | ----------------------- | -------------- | ------------------------------- | -------------------- |
-| subreddit | search                       | GET    | /subreddit/search?q=    | -              | -                               | { subreddit }        |
-|           | create subreddit             | POST   | /subreddit              | Authorization  | { name }                        | { subreddit object } |
-|           | subscribe                    | POST   | /subreddit/subscribe    | Authorization  | { subredditId }                 | { subredditId }      |
-|           | unsubscirbe                  | POST   | /subreddit/unsubscribe  | Authorization  | { subredditId }                 | -                    |
-|           | create post in subreddit     | POST   | /subreddit/post         | Authorization  | { title, content, subredditId } | { post object }      |
-|           | comment to post in subreddit | PATCH  | /subreddit/post/comment | Authorization  | { postId, text, replyToId }     | -                    |
+| object    | Functionality                          | Method | Endpoint                     | Request Header | Request Body                    | Response             |
+| --------- | -------------------------------------- | ------ | ---------------------------- | -------------- | ------------------------------- | -------------------- |
+| subreddit | search                                 | GET    | /subreddit/search?q=         | -              | -                               | { subreddit }        |
+|           | create subreddit                       | POST   | /subreddit                   | Authorization  | { name }                        | { subreddit object } |
+|           | subscribe                              | POST   | /subreddit/subscribe         | Authorization  | { subredditId }                 | { subredditId }      |
+|           | unsubscirbe                            | POST   | /subreddit/unsubscribe       | Authorization  | { subredditId }                 | -                    |
+|           | create post in subreddit               | POST   | /subreddit/post              | Authorization  | { title, content, subredditId } | { post object }      |
+|           | comment to post in subreddit           | PATCH  | /subreddit/post/comment      | Authorization  | { postId, text, replyToId }     | -                    |
+|           | vote to post in subreddit              | PATCH  | /subreddit/post/vote         | Authorization  | { postId, voteType }            | {voteCount}          |
+|           | vote to a comment in post in subreddit | PATCH  | /subreddit/post/cooment/vote | Authorization  | { commentId, voteType }         | -                    |
 
 
-**Post Routes**:
+**User Routes**:
 
 | object | Functionality         | Method | Endpoint       | Request Header | Request Body | Response        |
 | ------ | --------------------- | ------ | -------------- | -------------- | ------------ | --------------- |
-| user   | get user information  | GET    | /user/:\_id    |                | -            | { user object } |
+| user   | get user information  | GET    | /user/:\id     |                | -            | { user object } |
 |        | change username       | PATCH  | /user/username | Authorization  | { name }     | -               |
 |        | upload user imagine   | POST   | /user/imagine  | Authorization  | { file }     | -               |
 |        | download user imagine | GET    | /user/imagine  | Authorization  | { file }     | -               |

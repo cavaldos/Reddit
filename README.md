@@ -131,16 +131,16 @@ List of available routes:
 
 **Subreddit Routes**:
 
-| object    | Functionality                          | Method | Endpoint                     | Request Header | Request Body                    | Response             |
-| --------- | -------------------------------------- | ------ | ---------------------------- | -------------- | ------------------------------- | -------------------- |
-| subreddit | search                                 | GET    | /subreddit/search?q=         | -              | -                               | { subreddit }        |
-|           | create subreddit                       | POST   | /subreddit                   | Authorization  | { name }                        | { subreddit object } |
-|           | subscribe                              | POST   | /subreddit/subscribe         | Authorization  | { subredditId }                 | { subredditId }      |
-|           | unsubscirbe                            | POST   | /subreddit/unsubscribe       | Authorization  | { subredditId }                 | -                    |
-|           | create post in subreddit               | POST   | /subreddit/post              | Authorization  | { title, content, subredditId } | { post object }      |
-|           | comment to post in subreddit           | PATCH  | /subreddit/post/comment      | Authorization  | { postId, text, replyToId }     | -                    |
-|           | vote to post in subreddit              | PATCH  | /subreddit/post/vote         | Authorization  | { postId, voteType }            | {voteCount}          |
-|           | vote to a comment in post in subreddit | PATCH  | /subreddit/post/cooment/vote | Authorization  | { commentId, voteType }         | -                    |
+| object    | Functionality                | Method | Endpoint                     | Request Header | Request Body                    | Response             |
+| --------- | ---------------------------- | ------ | ---------------------------- | -------------- | ------------------------------- | -------------------- |
+| subreddit | search                       | GET    | /subreddit/search?q=         | -              | -                               | { subreddit }        |
+|           | create subreddit             | POST   | /subreddit                   | Authorization  | { name }                        | { subreddit object } |
+|           | subscribe                    | POST   | /subreddit/subscribe         | Authorization  | { subredditId }                 | { subredditId }      |
+|           | unsubscirbe                  | POST   | /subreddit/unsubscribe       | Authorization  | { subredditId }                 | -                    |
+|           | create post in subreddit     | POST   | /subreddit/post              | Authorization  | { title, content, subredditId } | { post object }      |
+|           | comment to post in subreddit | PATCH  | /subreddit/post/comment      | Authorization  | { postId, text, replyToId }     | -                    |
+|           | vote to post in subreddit    | PATCH  | /subreddit/post/vote         | Authorization  | { postId, voteType }            | {voteCount}          |
+|           | vote to a comment            | PATCH  | /subreddit/post/comment/vote | Authorization  | { commentId, voteType }         | -                    |
 
 
 **User Routes**:

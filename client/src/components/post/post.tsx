@@ -1,8 +1,9 @@
+"use client";
 import { PiArrowFatDownLight, PiArrowFatUpLight } from "react-icons/pi";
 import { GoComment } from "react-icons/go";
-
 import { PiShareFat } from "react-icons/pi";
 import { BsBookmark } from "react-icons/bs";
+import { useRouter } from "next/navigation";
 
 interface PostInterface {
   id: string;
@@ -25,8 +26,13 @@ export interface PostProps {
 }
 
 const Post: React.FC = () => {
+  const router = useRouter();
+
   return (
-    <div className="post bg-dark w-[650px] min-h-[200px] min-h-auto flex rounded-[5px] border-[1.9px] border-[#353436] hover:border-gray-500 ">
+    <div
+      onClick={() => router.push("/r/group")}
+      className="post bg-dark w-[650px] min-h-[200px] min-h-auto flex rounded-[5px] border-[1.9px] border-[#353436] hover:border-gray-500 "
+    >
       <div className="bg-[#161617] p-1 px-2 justify-center items-center align-middle  rounded-l-[6px]">
         <PiArrowFatUpLight className="text-gray-400 text-2xl mx-auto mt-3  " />
         <h1 className="text-gray-200 font-bold text-[13px] font-mono pl-1 px-auto ">

@@ -3,7 +3,8 @@ import { LuSettings2 } from "react-icons/lu";
 import { HiOutlineChevronDown } from "react-icons/hi";
 import { HiOutlineExternalLink } from "react-icons/hi";
 import { AiOutlineClose } from "react-icons/ai";
-const Chat: React.FC = () => {
+import ChatList from "~/components/chat/chatlist";
+const ChatBox: React.FC = () => {
   return (
     <>
       <div
@@ -28,10 +29,11 @@ const Chat: React.FC = () => {
             <HiOutlineExternalLink className="text-2xl ml-2 mt-1" />
             <AiOutlineClose className="text-2xl ml-2 mt-1" />
           </div>
-          <div>sdfsdf</div>
+
+          <ChatList />
         </div>
       </div>
     </>
   );
 };
-export default Chat;
+export default ChatBox;

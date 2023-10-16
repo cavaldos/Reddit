@@ -2,11 +2,11 @@ import Header from "~/components/header/header";
 import MainReddits from "~/components/main/main";
 import ListPost from "~/components/post/listpost";
 import Sub from "~/components/post/sub";
-import Chat from "~/components/chat/chat";
+import ChatBox from "~/components/chat/chatbox";
 const Home: React.FC = () => {
   return (
     <>
-      <Chat />
+      <ChatBox />
       <Header />
       <MainReddits>
         <ListPost />

@@ -8,16 +8,16 @@ import { getAuth } from "firebase/auth";
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyChTJC5ubyCfsglmhHopdXJ4NYqYB1TEZM",
-  authDomain: "spotify-5a4d8.firebaseapp.com",
-  projectId: "spotify-5a4d8",
-  storageBucket: "spotify-5a4d8.appspot.com",
-  messagingSenderId: "310288182647",
-  appId: "1:310288182647:web:faac3c39cdb4e3f3780572",
-  measurementId: "G-8P79D6GFJ0",
+  apiKey: "AIzaSyBABBiGYfcvcBctAkX2elDpk6TjjPxfIaQ",
+  authDomain: "reddit-d54f3.firebaseapp.com",
+  projectId: "reddit-d54f3",
+  storageBucket: "reddit-d54f3.appspot.com",
+  messagingSenderId: "224662782776",
+  appId: "1:224662782776:web:11e05bc2c761d9fce337cd",
+  measurementId: "G-PHQKJTWY7J",
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-export const analytics = getAnalytics(app);
-export const auth = getAuth(app);
+// const analytics = getAnalytics(app);
+export const auth = getAuth();

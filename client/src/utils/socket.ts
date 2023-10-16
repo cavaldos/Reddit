@@ -7,7 +7,7 @@ function connectWebSocket(
 ) {
   // const socket = new WebSocket(`ws:${process.env.REACT_APP_API_SOCKET}/?clientId=${YOUR_CLIENT_ID}`);
   //   const socket = new WebSocket(`ws:${process.env.REACT_APP_API_SOCKET}/`);
-  const socket = new WebSocket(`ws://localhost:3000/`);
+  const socket = new WebSocket(`ws://localhost:5000/`);
 
   socket.onopen = () => {
     console.log("Connected to server");

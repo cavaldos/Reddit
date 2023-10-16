@@ -32,12 +32,12 @@ List of available routes:
 
 **Post Routes**:
 
-| object | Functionality        | Method | Endpoint       | Request Header | Request Body | Response        |
-| ------ | -------------------- | ------ | -------------- | -------------- | ------------ | --------------- |
-| user   | get user information | GET    | /user/:\_id    |                | -            | { user object } |
-|        | change username      | PATCH  | /user/username | Authorization  | { name }     | -               |
+| object | Functionality         | Method | Endpoint       | Request Header | Request Body | Response        |
+| ------ | --------------------- | ------ | -------------- | -------------- | ------------ | --------------- |
+| user   | get user information  | GET    | /user/:\_id    |                | -            | { user object } |
+|        | change username       | PATCH  | /user/username | Authorization  | { name }     | -               |
 |        | upload user imagine   | POST   | /user/imagine  | Authorization  | { file }     | -               |
-|        | download user imagine   | GET   | /user/imagine  | Authorization  | { file }     | -               |
+|        | download user imagine | GET    | /user/imagine  | Authorization  | { file }     | -               |
 
 
 <br />

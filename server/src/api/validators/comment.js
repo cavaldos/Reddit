@@ -7,4 +7,4 @@ const CommentValidator = z.object({
 })
 
 
-module.exports = {CommentValidator};
+module.exports = { CommentValidator };

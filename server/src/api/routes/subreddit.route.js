@@ -7,9 +7,12 @@ const authMiddleware = require ("../middlewares/auth");
 
 
 router.post("/", authMiddleware.access, subredditController.create);
+
 router.get("/search", subredditController.search);
-router.post("/post", authMiddleware.access, postController.create);
 router.post("/subscribe", authMiddleware.access, subredditController.subscribe);
 router.post("/unsubscirbe", authMiddleware.access, subredditController.unsubscribe);
+router.post("/post", authMiddleware.access, postController.create);
+router.patch("/post/vote", authMiddleware.access, postController.vote);
 router.patch("/post/comment", authMiddleware.access, commentController.comment);
+router.patch("/post/comment/vote", authMiddleware.access, commentController.vote);
 module.exports = router;

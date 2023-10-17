@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "module": "ESNext",
+    "moduleResolution": "node",
     "allowJs": true,
     "declaration": true,
     "removeComments": true,
@@ -17,7 +18,7 @@
     "incremental": true
   },
   "paths": {
-    "~/*": ["src/*"]
+    "~/*": ["src/*"],
   },
   "include": ["**/*.ts", "**/*.tsx", "src/**/*.js", "src/**/*"],
   "exclude": ["node_modules"]

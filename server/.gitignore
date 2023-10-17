@@ -2,3 +2,5 @@
 .env
 /build
 push.sh
+/prisma/migrations
+/src/uploads

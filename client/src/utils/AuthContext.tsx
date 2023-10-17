@@ -1,29 +1,31 @@
-'use client'
-
-import React, { use } from "react";
+"use client";
+import React, { createContext, useState, useEffect } from "react";
 import { auth } from "~/config/firebase";
-import { createContext, useState, useEffect } from "react";
 
-const AuthContext = createContext();
+const AuthContext = createContext<null | {
+  user: null;
+  setUser: React.Dispatch<React.SetStateAction<null>>;
+}>(null);
 interface AuthContextProps {
   children: React.ReactNode;
 }
 
 const AuthProvider: React.FC<AuthContextProps> = ({ children }) => {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState<null>(null);
+
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
       console.log("user", user);
     });
+
     return () => unsubscribe();
   }, []);
 
   return (
-    <>
-      <AuthContext.Provider value={{ user, setUser }}>
-        {children}
-      </AuthContext.Provider>
-    </>
+    <AuthContext.Provider value={{ user, setUser }}>
+      {children}
+    </AuthContext.Provider>
   );
 };
+
 export default AuthProvider;

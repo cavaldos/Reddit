@@ -13,7 +13,6 @@ import {
   getAuth,
   onAuthStateChanged,
 } from "firebase/auth";
-import GoogleButton from "react-google-button";
 import { auth } from "~/config/firebase";
 const SignPage: React.FC = () => {
 

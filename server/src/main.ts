@@ -46,4 +46,4 @@ server.listen(port, () => {
   console.log(`  🚀  ➜ Network:  `, colors.green(`http://${IP}:${port}\n`));
 });
 
-startWebSocketServer(server);
+startWebSocketServer(server as any);

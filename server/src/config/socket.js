@@ -1,5 +1,7 @@
 const WebSocket = require("ws");
-
+const corsOptions = {
+  origin: "*",
+};
 function startWebSocketServer(server) {
   const wss = new WebSocket.Server({
     server,

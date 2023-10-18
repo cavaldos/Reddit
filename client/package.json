@@ -16,7 +16,7 @@
     "draft-js": "^0.11.7",
     "draftjs-to-html": "^0.9.1",
     "firebaseui": "^6.1.0",
-    "next": "latest",
+    "next": "^13.5.5",
     "react": "latest",
     "react-dom": "latest",
     "react-draft-wysiwyg": "^1.15.0",
@@ -29,6 +29,7 @@
     "websocket": "^1.0.34"
   },
   "devDependencies": {
+    "@reduxjs/toolkit": "^1.9.5",
     "@tailwindcss/typography": "^0.5.10",
     "@types/draftjs-to-html": "^0.8.2",
     "@types/node": "latest",
@@ -42,6 +43,9 @@
     "eslint-config-next": "latest",
     "firebase": "^10.5.0",
     "postcss": "latest",
+    "react-redux": "^8.1.2",
+    "redux-persist": "^6.0.0",
+    "redux-thunk": "^2.4.2",
     "tailwindcss": "latest",
     "typescript": "latest"
   }

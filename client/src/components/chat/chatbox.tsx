@@ -1,3 +1,5 @@
+'use client'
+
 import { PiChatTeardropDotsBold } from "react-icons/pi";
 import { LuSettings2 } from "react-icons/lu";
 import { HiOutlineChevronDown } from "react-icons/hi";
@@ -5,7 +7,11 @@ import { HiOutlineExternalLink } from "react-icons/hi";
 import { AiOutlineClose } from "react-icons/ai";
 import ChatView from "~/components/chat/chatview";
 import { GoDotFill } from "react-icons/go";
+import { useSelector } from "react-redux";
+
+
 const UserWidget: React.FC = () => {
+  
   return (
     <>
       <div className="flex items-center ">

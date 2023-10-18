@@ -19,16 +19,16 @@ const SignPage: React.FC = () => {
 
   const handleLoginwithGoogle = async () => {
     const provider = new GoogleAuthProvider();
-    // signInWithPopup(auth, provider)
-    //   .then((result) => {
-    //     console.log("result", result);
-    //   })
-    //   .catch((error) => {
-    //     console.log("error", error);
-    //   });
+    signInWithPopup(auth, provider)
+      .then((result) => {
+        console.log("result", result);
+      })
+      .catch((error) => {
+        console.log("error");
+      });
 
-    const result = await signInWithPopup(auth, provider);
-    console.log("result", result);
+    // const result = await signInWithPopup(auth, provider);
+    // console.log("result", result);
   
   }
 

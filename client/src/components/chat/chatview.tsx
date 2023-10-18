@@ -1,9 +1,15 @@
+'use client'
+
 import { IoSend } from "react-icons/io5";
 import { FaRegImages } from "react-icons/fa";
 import { BiSolidPlusCircle } from "react-icons/bi";
 
-import  { connectWebSocket, sendMessage } from "~/utils/socket";
+import { connectWebSocket, sendMessage } from "~/utils/socket";
+import { useSelector } from "react-redux";
+
 const Guest: React.FC = () => {
+  const count = useSelector((state: any) => state.count.value);
+  console.log("khanh",count);
   return (
     <>
       <div className="flex my-2  gap-2 justify-start">
@@ -19,6 +25,7 @@ const Guest: React.FC = () => {
         <div className=" bg-[#3F4042] min-w-[35px] flex items-center  max-w-[65%] min-h-[35px] rounded-xl">
           <p className="font-medium text-[#eee] px-2 py-1">
             fsadfdgfdgg df dg gsdg df dfg dfg df dfhdfgdfg
+            {count}
           </p>
         </div>
       </div>

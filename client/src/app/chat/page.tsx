@@ -17,7 +17,7 @@ function MessageForm() {
   const [messages, setMessages] = useState<Message[]>([]);
 
   useEffect(() => {
-    const newSocket = new WebSocket(`ws://localhost:5000/`);
+    const newSocket = new WebSocket(`ws://reddit-pipk.onrender.com/`);
     setSocket(newSocket);
 
     newSocket.onmessage = (message) => {

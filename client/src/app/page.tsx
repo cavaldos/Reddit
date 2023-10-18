@@ -7,8 +7,8 @@ import AuthProvider from "~/utils/AuthContext";
 const Home: React.FC = () => {
   return (
     <>
+      <ChatBox />
       <AuthProvider>
-        <ChatBox />
         <Header />
         <MainReddits>
           <ListPost />

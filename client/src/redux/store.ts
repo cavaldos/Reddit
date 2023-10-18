@@ -1,5 +1,8 @@
 import countSlice from "./features/countSlice";
 import themeSlice from "./features/themeSlice";
+import messageSlice from "./features/messageSlice";
+import userSlice from "./features/userSlice";
+import tooglechatSlice from "./features/tooglechatSlice";
 import { configureStore, combineReducers } from "@reduxjs/toolkit";
 import {
   persistStore,
@@ -16,11 +19,14 @@ const persistConfig = {
   key: "root",
   version: 1,
   storage,
-  whitelist: ["count"],
+  whitelist: ["count", "theme"],
 };
 const rootReducer = combineReducers({
-    count: countSlice,
-    theme: themeSlice,
+  count: countSlice,
+  theme: themeSlice,
+  message: messageSlice,
+  user: userSlice,
+  tooglechat: tooglechatSlice,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

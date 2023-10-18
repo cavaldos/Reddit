@@ -10,7 +10,6 @@ const startWebSocketServer = require("./config/socket");
 const http = require("http");
 const server = http.createServer(app);
 
-
 const {
   authRouter,
   postRouter,
@@ -30,6 +29,11 @@ app.use("/auth", authRouter);
 app.use("/user", userRouter);
 app.use("/post", postRouter);
 app.use("/comment", commentRouter);
+app.use("/", (req, res) => {
+  res.status(200).json({
+    message: "Server is running",
+  });
+});
 
 const port = process.env.PORT || 5000;
 const host = "0.0.0.0";

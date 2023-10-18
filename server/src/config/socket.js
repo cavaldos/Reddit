@@ -1,8 +1,11 @@
 const WebSocket = require("ws");
 
 function startWebSocketServer(server) {
-  
-  const wss = new WebSocket.Server({ server });
+  const wss = new WebSocket.Server({
+    server,
+    clientTracking: true,
+    cors: corsOptions,
+  });
   const connections = new Set();
   wss.on("connection", (socket) => {
     console.log("Client connected ");

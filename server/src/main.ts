@@ -10,6 +10,14 @@ const startWebSocketServer = require("./config/socket");
 const http = require("http");
 const server = http.createServer(app);
 
+const corsOptions = {
+  origin: "*",
+};
+const wss = new WebSocket.Server({
+  server,
+  clientTracking: true,
+  cors: corsOptions,
+});
 const {
   authRouter,
   postRouter,

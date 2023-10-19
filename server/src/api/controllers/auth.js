@@ -2,7 +2,7 @@ const authController = {
   login:  async (req, res) => {
     try {
       res.status(200).json("login");
-      
+      console.log("login");
     } catch (error) {
       res.status(500).json({
         message: "error",
@@ -21,4 +21,4 @@ const authController = {
     }
   },
 };
-module.exports = authController;
+ export default authController;

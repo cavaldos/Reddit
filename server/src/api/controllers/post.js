@@ -1,5 +1,4 @@
-const post = require("../../datafake/post");
-
+import post from "../../datafake/post";
 const postController = {
   getall: async  (req, res) => {
     try {
@@ -77,4 +76,4 @@ const postController = {
     }
   },
 };
-module.exports = postController;
+export default postController;

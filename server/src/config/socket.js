@@ -1,10 +1,15 @@
-const WebSocket = require("ws");
+import * as WebSocket from "ws";
+import { WebSocketServer } from "ws";
+
+import cors from "cors";
 const corsOptions = {
   origin: "*",
 };
+
 function startWebSocketServer(server) {
-  const wss = new WebSocket.Server({
+  const wss = new WebSocketServer({
     server,
+    // noServer: false,
     clientTracking: true,
     cors: corsOptions,
   });
@@ -42,4 +47,4 @@ function startWebSocketServer(server) {
   });
 }
 
-module.exports = startWebSocketServer;
+export default startWebSocketServer;

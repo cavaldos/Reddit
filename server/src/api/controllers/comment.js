@@ -1,11 +1,11 @@
-const user = require("../../datafake/user");
+import comments from "../../datafake/comment";
 
-const userController = {
+const commentController = {
   getall: async (req, res) => {
     try {
       res.status(200).json({
         message: "getall",
-        data: user,
+        data: comment,
       });
     } catch (error) {
       res.status(500).json({
@@ -17,7 +17,7 @@ const userController = {
   getbyid: async (req, res) => {
     try {
       const { id } = req.params;
-      const data = user.find((item) => item.uid === id);
+      const data = comment.find((item) => item.id === id);
       res.status(200).json({
         message: "getbyid",
         data,
@@ -32,10 +32,10 @@ const userController = {
   create: async (req, res) => {
     try {
       const { body } = req;
-      user.push(body);
+      comment.push(body);
       res.status(200).json({
         message: "create",
-        data: user,
+        data: comment,
       });
     } catch (error) {
       res.status(500).json({
@@ -44,10 +44,11 @@ const userController = {
       });
     }
   },
+
   delete: async (req, res) => {
     try {
       const { id } = req.params;
-      const data = user.filter((item) => item.uid !== id);
+      const data = comment.filter((item) => item.id !== id);
       res.status(200).json({
         message: "delete",
         data,
@@ -63,18 +64,14 @@ const userController = {
     try {
       const { id } = req.params;
       const { body } = req;
-      const data = user.map((item) => {
-        if (item.id === id) {
-          return {
-            ...item,
-            ...body,
-          };
-        }
-        return item;
-      });
+      const index = comment.findIndex((item) => item.id === id);
+      comment[index] = {
+        ...comment[index],
+        ...body,
+      };
       res.status(200).json({
         message: "update",
-        data,
+        data: comment,
       });
     } catch (error) {
       res.status(500).json({
@@ -84,4 +81,4 @@ const userController = {
     }
   },
 };
-module.exports = userController;
+export default commentController;

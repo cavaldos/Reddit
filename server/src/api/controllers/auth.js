@@ -1,8 +1,12 @@
+
+import user from "../../models/user.model.js";
+
+
 const authController = {
-  login:  async (req, res) => {
+  login: async (req, res) => {
     try {
-      res.status(200).json("login");
-      console.log("login");
+      res.status(200).json("login success");
+      console.log("login success");
     } catch (error) {
       res.status(500).json({
         message: "error",
@@ -10,7 +14,7 @@ const authController = {
       });
     }
   },
-  logout:  async (req, res) => {
+  logout: async (req, res) => {
     try {
       res.status(200).json("logout");
     } catch (error) {
@@ -21,4 +25,4 @@ const authController = {
     }
   },
 };
- export default authController;
+export default authController;

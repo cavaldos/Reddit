@@ -17,6 +17,13 @@ function startWebSocketServer(server) {
   wss.on("connection", (socket) => {
     console.log("Client connected ");
     connections.add(socket);
+    arrayId.map((item) => {
+      if (item.id === socket.id) {
+        console.log("Da co id");
+      } else {
+        arrayId.push({ id: socket.id });
+      }
+    });
     console.log("Number of connections:", connections.size);
     socket.on("message", (message) => {
       const decodedMessage = message.toString();
@@ -24,8 +31,6 @@ function startWebSocketServer(server) {
 
       console.log("Received message:", messageObject);
       const { receiverId } = messageObject;
-
-      console.log("ID người nhận: ", receiverId);
 
       connections.forEach((connection) => {
         connection.id = receiverId;

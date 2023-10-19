@@ -1549,7 +1549,7 @@ mongodb@5.9.0:
 
 mongoose@^7.6.3:
   version "7.6.3"
-  resolved "https://registry.npmjs.org/mongoose/-/mongoose-7.6.3.tgz"
+  resolved "https://registry.yarnpkg.com/mongoose/-/mongoose-7.6.3.tgz#b06507dd164ad4426013eeb266d54aa1e5178092"
   integrity sha512-moYP2qWCOdWRDeBxqB/zYwQmQnTBsF5DoolX5uPyI218BkiA1ujGY27P0NTd4oWIX+LLkZPw0LDzlc/7oh1plg==
   dependencies:
     bson "^5.5.0"

@@ -7,40 +7,35 @@ import colors from "ansicolors";
 import IP from "./config/IP.js";
 import startWebSocketServer from "./config/socket.js";
 import http from "http";
-import { getAuth } from "firebase-admin/auth";
+import "./config/firebase.js";
+import MONGODB from "./config/mongod.js";
+import { authRouter, userRouter } from "./api/routes/index.js";
+
 
 const server = http.createServer(app);
 const corsOptions = {
   origin: "*",
 };
 
-import {
-  authRouter,
-  // postRouter,
-  // userRouter,
-  // commentRouter,
-} from "./api/routes/index.js";
+
 
 app.use(express.json());
 dotenv.config();
 app.use(morgan("tiny"));
 app.use(cors());
 app.use(express.urlencoded({ extended: true }));
+MONGODB.connectdb();
 // // =======================================
 
 // // Routes
 app.use("/auth", authRouter);
-// app.use("/user", userRouter);
-// app.use("/post", postRouter);
-// app.use("/comment", commentRouter);
+app.use("/user", userRouter);
 
-app.use("/", (req, res) => {
-  res.status(200).json({
-    message: "Server is running",
-  });
-});
 
-const port = process.env.PORT || 5000;
+// // =======================================
+
+
+const port = process.env.PORT || 4000;
 const host = "0.0.0.0";
 server.listen(port, () => {
   console.log(`\n  🚀  ➜ Local:    `, colors.blue(`http://localhost:${port}`));

@@ -9,7 +9,7 @@ const corsOptions = {
 function startWebSocketServer(server) {
   const wss = new WebSocketServer({
     server,
-    // noServer: false,
+    noServer: false,
     clientTracking: true,
     cors: corsOptions,
   });
@@ -17,13 +17,7 @@ function startWebSocketServer(server) {
   wss.on("connection", (socket) => {
     console.log("Client connected ");
     connections.add(socket);
-    arrayId.map((item) => {
-      if (item.id === socket.id) {
-        console.log("Da co id");
-      } else {
-        arrayId.push({ id: socket.id });
-      }
-    });
+
     console.log("Number of connections:", connections.size);
     socket.on("message", (message) => {
       const decodedMessage = message.toString();

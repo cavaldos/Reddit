@@ -1,16 +1,11 @@
 import user from "../../models/user.model.js";
 import { getAuth } from "firebase-admin/auth";
 
-
 const userController = {
   getall: async (req, res) => {
     try {
       const User = await user.find();
-      res.status(200).json({
-        message: "getall",
-        data: User,
-      });
-     
+      res.status(200).json(User);
     } catch (error) {
       res.status(500).json({
         message: "error",

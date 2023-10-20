@@ -8,7 +8,7 @@ export const userSlice = createSlice({
     disPlayName: "default",
     email: "default",
   },
-  reducers: {
+  reducers: {  
     setUser: (state, action) => {
       state.uid = action.payload.uid;
       state.photoURL = action.payload.photoURL;

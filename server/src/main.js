@@ -9,15 +9,18 @@ import startWebSocketServer from "./config/socket.js";
 import http from "http";
 import "./config/firebase.js";
 import MONGODB from "./config/mongod.js";
-import { authRouter, userRouter } from "./api/routes/index.js";
+import {
+  authRouter,
+  userRouter,
+  postRouter,
+  subRouter,
+} from "./api/routes/index.js";
 
 
 const server = http.createServer(app);
 const corsOptions = {
   origin: "*",
 };
-
-
 
 app.use(express.json());
 dotenv.config();
@@ -30,6 +33,8 @@ MONGODB.connectdb();
 // // Routes
 app.use("/auth", authRouter);
 app.use("/user", userRouter);
+app.use("/post", postRouter);
+app.use("/sub", subRouter);
 
 
 // // =======================================

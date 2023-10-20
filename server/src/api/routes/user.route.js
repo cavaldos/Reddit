@@ -2,11 +2,11 @@ import userController from "../controllers/user.js";
 import express from "express";
 const userRouter = express.Router();
 
-
 userRouter.get("/getall", userController.getall);
-userRouter.get("/:id", userController.getbyid);
-userRouter.post("/create", userController.create);
-userRouter.put("/:id", userController.update);
-userRouter.delete("/:id", userController.delete);
+
+userRouter.patch("/username", userController.changeUsername);
+userRouter.post("/image", userController.uploadImage);
+userRouter.get("/:id/image/", userController.downloadImagine);
+userRouter.get("/:id", userController.getUserInfo);
 
 export default userRouter;

@@ -33,7 +33,11 @@ model User {
   name              String?
   email             String        @unique
   //emailVerified     DateTime?
+<<<<<<< HEAD
   password          String     
+=======
+  password          String?     
+>>>>>>> khanh
   createdSubreddits Subreddit[]    @relation("CreatedBy")
   subscriptions     Subscription[]
   votes             Vote[]

@@ -1,8 +1,8 @@
 import { w3cwebsocket as WebSocket } from "websocket";
 
 function connectWebSocket(
-  YOUR_CLIENT_ID: any,
-  RECEIVER_ID: any,
+  YOUR_CLIENT_ID: string,
+  RECEIVER_ID: string,
   onMessageReceived: any
 ) {
   // const socket = new WebSocket(`ws:${process.env.REACT_APP_API_SOCKET}/?clientId=${YOUR_CLIENT_ID}`);

@@ -4,7 +4,8 @@
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import React, { createContext, useState, useEffect, useContext } from "react";
-
+import AxiosInstance from "~/service/axios.config";
+import axios from "axios";
 import {
   GoogleAuthProvider,
   signInWithPopup,
@@ -13,75 +14,41 @@ import {
   getAuth,
   onAuthStateChanged,
 } from "firebase/auth";
-import GoogleButton from "react-google-button";
-import { auth } from "~/config/firebase"
+import { auth } from "~/config/firebase";
 
-
+import useLocalStorage from "~/utils/useLocalStorage";
 const SignPage: React.FC = () => {
+  const [token, setToken] = useLocalStorage("token", "");
 
+  const handleLoginwithGoogle = async () => {
+    const provider = new GoogleAuthProvider();
+    await signInWithPopup(auth, provider)
+      .then((result: any) => {
+        console.log("result", result);
+        console.log("result", result.user.accessToken);
+        setToken(result.user.accessToken);
+      })
+      .catch((error) => {
+        console.log("error");
+      });
+    await axios
+      .get("http://localhost:3000/auth/login", {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+      .then((res) => {
+        console.log("res", res);
+      })
+      .catch((error) => {
+        console.log("error");
+      });
 
-
-// const [user, setUser] = useState<any>(null);
-// const googleSignIn = () => {
-//   const provider = new GoogleAuthProvider();
-//   signInWithPopup(auth, provider)
-//     .then((result) => {
-//       setUser(result.user);
-//       console.log("khanh", result.user);
-//     })
-//     .catch((error) => {
-//       console.log("khanh2", error.message);
-//     });
-// };
-// const handleLogin = async () => {
-//   try {
-//     await googleSignIn();
-//     console.log("login");
-//   } catch (error) {
-//     console.log(error);
-//   }
-// };
-
-// // useEffect(() => {
-// //   const unsubscribe = onAuthStateChanged(auth, (user) => {
-// //     if (user) {
-// //       setUser(user);
-// //       console.log("khanh3", user);
-// //     } else {
-// //       setUser(null);
-// //       console.log("khanh4", user);
-// //     }
-// //   });
-// //   return () => unsubscribe();
-// // }, []);
-
-// const handleLogout = () => {
-//   signOut(auth)
-//     .then(() => {
-//       setUser(null);
-//       console.log("Đăng xuất thành công");
-//     })
-//     .catch((error) => {
-//       console.log("Lỗi đăng xuất", error);
-//     });
-// };
-// console.log("khanh5", user);
-
-
+    // const result = await signInWithPopup(auth, provider);
+  };
 
   const url =
     "https://images.unsplash.com/photo-1696587522095-1d0b522b3e36?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80";
-
- 
-  const router = useRouter();
-
-  const auth = true;
-  console.log("khanh", auth);
-  if (!auth) {
-    router.push("/");
-    return <></>;
-  }
-
 
   return (
     <>
@@ -92,7 +59,7 @@ const SignPage: React.FC = () => {
         <div className="h-[100vh] w-full bg-slate-100 text-dark">
           <div className=" h-screen w-64  justify-center items-center flex">
             <button
-              // onClick={handleLogin}
+              onClick={handleLoginwithGoogle}
               className=" text-dark  flex  border-2 border-gray-950		 rounded-[7px] px-4 py-2 "
             >
               <img src="/icon/gg.svg" alt="google" className="w-6 h-6 mr-3" />

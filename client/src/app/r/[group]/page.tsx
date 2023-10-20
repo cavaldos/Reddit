@@ -31,7 +31,7 @@ const AboutCommunity: React.FC = () => {
         <div className=" flex w-full  border-b-[1px] border-border pb-4 mb-2 ">
           <LuCakeSlice className="text-2xl mr-3 text-[#b9b8b8] scale-x-[-1]" />
           <h1 className="text-ct font-sans text-[15px] mt-[1px]">
-            Created {"Mar 28,2018"}""
+            Created {"Mar 28,2018"}
           </h1>
         </div>
         <div className="border-border border-b-[1px] flex w-full gap-1">

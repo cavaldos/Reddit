@@ -24,6 +24,12 @@
       "icon": ["./src/assets/icon"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/signin/page.tsx"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "src/app/signin/page.tsx"
+, "src/app/chat/page.tsx", "src/components/chat/chatview.jsx"  ],
   "exclude": ["node_modules"]
 }

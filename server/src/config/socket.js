@@ -1,12 +1,23 @@
-const WebSocket = require("ws");
+import * as WebSocket from "ws";
+import { WebSocketServer } from "ws";
+
+import cors from "cors";
+const corsOptions = {
+  origin: "*",
+};
 
 function startWebSocketServer(server) {
-  
-  const wss = new WebSocket.Server({ server });
+  const wss = new WebSocketServer({
+    server,
+    noServer: false,
+    clientTracking: true,
+    cors: corsOptions,
+  });
   const connections = new Set();
   wss.on("connection", (socket) => {
     console.log("Client connected ");
     connections.add(socket);
+
     console.log("Number of connections:", connections.size);
     socket.on("message", (message) => {
       const decodedMessage = message.toString();
@@ -14,8 +25,6 @@ function startWebSocketServer(server) {
 
       console.log("Received message:", messageObject);
       const { receiverId } = messageObject;
-
-      console.log("ID người nhận: ", receiverId);
 
       connections.forEach((connection) => {
         connection.id = receiverId;
@@ -37,4 +46,4 @@ function startWebSocketServer(server) {
   });
 }
 
-module.exports = startWebSocketServer;
+export default startWebSocketServer;

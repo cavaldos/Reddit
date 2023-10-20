@@ -13,6 +13,7 @@ import {
   signInWithRedirect,
   signOut,
   getAuth,
+
   onAuthStateChanged,
 } from "firebase/auth";
 import { auth } from "~/config/firebase";
@@ -21,12 +22,18 @@ import useLocalStorage from "~/utils/useLocalStorage";
 const SignPage: React.FC = () => {
   const [token, setToken] = useLocalStorage("token", "");
 
-  const router = useRouter();
-  React.useEffect(() => {
-    if (token !== "") {
+  const router = React.useMemo(() => useRouter(), []);
+
+
+  const isTokenExpired = (token: string) => {
+    const decodedToken: any = JSON.parse(atob(token.split(".")[1]));
+    return decodedToken.exp * 1000 < Date.now();
+  };
+  React.useEffect( () => {
+    if (token && !isTokenExpired(token)) {
       router.push("/");
     }
-  }, []);
+  }, [token]);
   const handleLoginwithGoogle = async () => {
     const provider = new GoogleAuthProvider();
     await signInWithPopup(auth, provider)
@@ -46,6 +53,8 @@ const SignPage: React.FC = () => {
       })
       .then((res) => {
         console.log("res", res);
+          router.push("/");
+
       })
       .catch((error) => {
         console.log("error");

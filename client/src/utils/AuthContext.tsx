@@ -15,7 +15,7 @@ const AuthProvider: React.FC<AuthContextProps> = ({ children }) => {
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
-      console.log("user", user);
+    
     });
 
     return () => unsubscribe();

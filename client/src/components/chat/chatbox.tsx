@@ -7,17 +7,33 @@ import { AiOutlineClose } from "react-icons/ai";
 import ChatView from "~/components/chat/chatview";
 import { GoDotFill } from "react-icons/go";
 import Image from "next/image";
-import React, { use, useState } from "react";
+import React, { useState, useEffect } from "react";
 import { togglechat } from "~/redux/features/tooglechatSlice";
 import { useSelector, useDispatch } from "react-redux";
-const UserWidget: React.FC = () => {
+import axios from "axios";
+import { setReceiveID } from "~/redux/features/messageSlice";
+interface User {
+  displayName: string;
+  photoURL: string;
+  email: string;
+  uid: string;
+}
+const UserWidget: React.FC<User> = ({ displayName, photoURL, email, uid }) => {
+  const dispatch = useDispatch();
+
+  const handleUserClick = () => {
+    dispatch(setReceiveID(uid));
+  };
   return (
     <>
-      <div className="flex items-center ">
+      <div
+        onClick={handleUserClick}
+        className="flex items-center hover:cursor-pointer  "
+      >
         <div className="flex py-1  gap-2 justify-start hover:bg-[#3F4042] rounded-[5px]">
           <div className="w-[40px] h-[40px] ml-2  relative">
-            <Image
-              src="	https://www.redditstatic.com/avatars/avatar_default_02_0079D3.png"
+            <img
+              src={photoURL}
               alt="profile pic"
               className="w-[40px] h-[40px] rounded-full bg-transparent "
               width={40}
@@ -26,7 +42,7 @@ const UserWidget: React.FC = () => {
             <GoDotFill className="absolute bottom-[-7px] right-[-7px] text-2xl  text-green-600" />
           </div>
           <div className="w-36 flex items-start font-bold ">
-            <h1 className=" hover:cursor-pointer">Name</h1>
+            <h1 className=" hover:cursor-pointer">{displayName}</h1>
           </div>
         </div>
       </div>
@@ -43,6 +59,14 @@ const ChatBox: React.FC = () => {
     console.log("showchat", showChat);
     dispatch(togglechat());
   };
+  const [user, setUser] = useState<User[]>([]);
+  useEffect(() => {
+    const fetchUser = async () => {
+      const res = await axios.get("http://localhost:3000/user/getall");
+      setUser(res.data);
+    };
+    fetchUser();
+  }, []);
 
   return (
     <>
@@ -60,10 +84,16 @@ const ChatBox: React.FC = () => {
               <LuSettings2 className="text-2xl ml-2 mt-1" />
               <HiOutlineChevronDown className="text-2xl ml-2 mt-1 mr-1" />
             </div>
-            <div className="flex flex-col w-full">
-              <UserWidget />
-              <UserWidget />
-              <UserWidget />
+            <div className="flex flex-col w-full overflow-y-auto">
+              {user.map((item) => (
+                <UserWidget
+                  key={item.uid}
+                  displayName={item.displayName}
+                  photoURL={item.photoURL}
+                  email={item.email}
+                  uid={item.uid}
+                />
+              ))}
             </div>
           </div>
           <div className="flex rounded-tr-3xl flex-col  w-full border-l-[1px] border-border">

@@ -4,7 +4,8 @@
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import React, { createContext, useState, useEffect, useContext } from "react";
-
+import AxiosInstance from "~/service/axios.config";
+import axios from "axios";
 import {
   GoogleAuthProvider,
   signInWithPopup,
@@ -14,30 +15,41 @@ import {
   onAuthStateChanged,
 } from "firebase/auth";
 import { auth } from "~/config/firebase";
-const SignPage: React.FC = () => {
 
+import useLocalStorage from "~/utils/useLocalStorage";
+const SignPage: React.FC = () => {
+  const [token, setToken] = useLocalStorage("token", "");
 
   const handleLoginwithGoogle = async () => {
     const provider = new GoogleAuthProvider();
-    signInWithPopup(auth, provider)
-      .then((result) => {
+    await signInWithPopup(auth, provider)
+      .then((result: any) => {
         console.log("result", result);
+        console.log("result", result.user.accessToken);
+        setToken(result.user.accessToken);
+      })
+      .catch((error) => {
+        console.log("error");
+      });
+    await axios
+      .get("http://localhost:3000/auth/login", {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+      .then((res) => {
+        console.log("res", res);
       })
       .catch((error) => {
         console.log("error");
       });
 
     // const result = await signInWithPopup(auth, provider);
-    // console.log("result", result);
-  
-  }
-
-
+  };
 
   const url =
     "https://images.unsplash.com/photo-1696587522095-1d0b522b3e36?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80";
 
- 
   return (
     <>
       <div className="flex">

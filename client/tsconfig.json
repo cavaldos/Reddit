@@ -30,6 +30,6 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "src/app/signin/page.tsx"
-, "src/app/chat/page.tsx"  ],
+, "src/app/chat/page.tsx", "src/components/chat/chatview.jsx"  ],
   "exclude": ["node_modules"]
 }

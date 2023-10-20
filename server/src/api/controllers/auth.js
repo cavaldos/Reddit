@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 
 import user from "../../models/user.model.js";
 
@@ -36,7 +34,6 @@ export default authController;
 
 
 
->>>>>>> khanh
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const db = require('../../config/database');
@@ -168,10 +165,7 @@ const authController = {
   }
 };
 module.exports = authController;
-<<<<<<< HEAD
-=======
 
 
 
  */
->>>>>>> khanh

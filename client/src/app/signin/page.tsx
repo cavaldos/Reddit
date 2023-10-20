@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import React, { createContext, useState, useEffect, useContext } from "react";
 import AxiosInstance from "~/service/axios.config";
+
 import axios from "axios";
 import {
   GoogleAuthProvider,
@@ -20,6 +21,12 @@ import useLocalStorage from "~/utils/useLocalStorage";
 const SignPage: React.FC = () => {
   const [token, setToken] = useLocalStorage("token", "");
 
+  const router = useRouter();
+  React.useEffect(() => {
+    if (token !== "") {
+      router.push("/");
+    }
+  }, []);
   const handleLoginwithGoogle = async () => {
     const provider = new GoogleAuthProvider();
     await signInWithPopup(auth, provider)

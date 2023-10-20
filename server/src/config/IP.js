@@ -1,21 +1,21 @@
-const os = require("os");
+import os from  "os";
 
-function getIPAddresses() {
-  const networkInterfaces = os.networkInterfaces();
-  const ipAddresses = [];
-
-  Object.keys(networkInterfaces).forEach((interfaceName) => {
-    const interfaces = networkInterfaces[interfaceName];
-    interfaces.forEach((interface) => {
-      if (interface.family === "IPv4" && !interface.internal) {
-        ipAddresses.push(interface.address);
-      }
+const getIPAddresses = {
+  getip: () => {
+    const networkInterfaces = os.networkInterfaces();
+    const ipAddresses = [];
+    Object.keys(networkInterfaces).forEach((interfaceName) => {
+      const interfaces = networkInterfaces[interfaceName];
+      interfaces.forEach((iface) => {
+        if (iface.family === "IPv4" && !iface.internal) {
+          ipAddresses.push(iface.address);
+        }
+      });
     });
-  });
 
-  return ipAddresses;
-}
-
-module.exports = {
-  getIPAddresses,
+    return ipAddresses;
+  },
 };
+
+const IP = getIPAddresses.getip()
+export default IP;

@@ -11,32 +11,12 @@
     "build": "tsc src/main.ts --outDir ./build"
   },
   "dependencies": {
-    "@prisma/client": "^5.4.2",
     "ansicolors": "^0.3.2",
-<<<<<<< HEAD
-    "apollo-server-express": "^3.12.1",
-    "bcryptjs": "^2.4.3",
-=======
->>>>>>> khanh
     "dotenv": "^16.3.1",
     "@prisma/client": "^5.4.2",
     "express-validator": "^7.0.1",
     "bcryptjs": "^2.4.3",
     "express": "^4.18.2",
-<<<<<<< HEAD
-    "express-validator": "^7.0.1",
-    "graphql": "^16.8.1",
-    "jsonwebtoken": "^9.0.2",
-    "mongoose": "^7.5.3",
-    "morgan": "^1.10.0",
-    "multer": "^1.4.5-lts.1",
-    "openai": "^3.2.1",
-    "querystring": "^0.2.1",
-    "ts-node": "^10.9.1",
-    "ts-node-dev": "^2.0.0",
-    "ws": "^8.14.2",
-    "zod": "^3.22.4"
-=======
     "multer": "^1.4.5-lts.1",
     "firebase-admin": "^11.11.0",
     "mongoose": "^7.6.3",
@@ -45,22 +25,14 @@
     "nodemon": "^3.0.1",
     "zod": "^3.22.4",
     "ws": "^8.14.2"
->>>>>>> khanh
   },
   "devDependencies": {
     "cors": "^2.8.5",
     "prisma": "^5.4.2",
     "express": "^4.18.2",
-<<<<<<< HEAD
-    "prisma": "^5.4.2",
-    "ts-node": "^10.9.1",
-    "ts-node-dev": "^2.0.0",
-    "typescript": "^5.2.2"
-=======
     "firebase-admin": "^11.11.0",
     "nodemon": "^3.0.1",
     "ws": "^8.14.2"
->>>>>>> khanh
   },
   "keywords": [
     "node",

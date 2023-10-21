@@ -2,6 +2,7 @@
 
 import React from "react";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 const Premium: React.FC = () => {
   const router = useRouter();
@@ -12,7 +13,7 @@ const Premium: React.FC = () => {
     <>
       <div className="h-[90px] w-full bg-darkcontent  rounded-[4px]	 border border-gray-600 p-1 relative ">
         <div className="flex">
-          <img
+          <Image
             src="./reddit.svg"
             alt=""
             className="h-[20px] w-[20px] ml-2 mt-1"
@@ -44,7 +45,7 @@ const Create: React.FC = () => {
       <div className="min-h-[90px] w-full bg-darkcontent  rounded-[4px]	 border border-gray-600 p-1  flex flex-col gap-2 ">
         <div className="bg-slate-800 m-[-4px] rounded-t-[3px]  h-9"></div>
         <div className="flex flex-row">
-          <img
+          <Image
             src="./reddit.svg"
             alt=""
             className="h-[20px] w-[20px] ml-2 mt-1"

@@ -2,6 +2,7 @@
 import ListPost from "~/components/post/listpost";
 import Sub from "~/components/post/sub";
 import MainReddits from "~/components/main/main";
+import Image from "next/image";
 
 import { PiArrowFatDownLight, PiArrowFatUpLight } from "react-icons/pi";
 import { GoComment } from "react-icons/go";
@@ -47,7 +48,7 @@ const Post: React.FC = () => {
 
         <div className="bg-darkcontent w-full flex flex-col  rounded-r-[6px] ">
           <div className="h-[30px] flex">
-            <img
+            <Image
               src="https://www.redditstatic.com/avatars/avatar_default_19_0079D3.png"
               alt=""
               className="rounded-full h-[20px] w-[20px] mt-1 ml-2"

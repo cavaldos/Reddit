@@ -3,7 +3,9 @@ import { IoSearchOutline } from "react-icons/io5";
 import { PiArrowFatDownLight, PiArrowFatUpLight } from "react-icons/pi";
 import { GoComment } from "react-icons/go";
 import { PiTipiBold } from "react-icons/pi";
-import {BsDot}  from "react-icons/bs"
+import { BsDot } from "react-icons/bs"
+import Image from "next/image";
+
 interface Props {
   children: React.ReactNode;
 }
@@ -13,7 +15,7 @@ const Comment: React.FC<Props> = ({ children }) => {
     <>
       <div className=" w-full min-h-[110px]  flex flex-col pb-2">
         <div className="flex">
-          <img
+          <Image
             src="https://www.redditstatic.com/avatars/avatar_default_19_0079D3.png"
             alt=""
             className="rounded-full h-[30px]  w-[30px] mt-1 ml-2"

@@ -9,6 +9,7 @@ import { PiEyeSlashDuotone } from "react-icons/pi";
 import { GoDotFill } from "react-icons/go";
 import { AiOutlineDown, AiOutlineUp } from "react-icons/ai";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 const AboutCommunity: React.FC = () => {
   const [checked, setChecked] = useState("checked");
@@ -111,7 +112,7 @@ const HeaderGroup: React.FC = () => {
   return (
     <>
       <div className="bg-[#1A1A1B] h-[365px] pt-[50px] mb-5 ">
-        <img
+        <Image
           src="/21126072.png"
           alt="group"
           className="object-cover h-[210px] bg-center w-full  mb-2"
@@ -119,7 +120,7 @@ const HeaderGroup: React.FC = () => {
           height={210}
         />
         <div className="flex justify-start items-center w-[59vw] mx-auto px-16">
-          <img
+          <Image
             src="/reddit.svg"
             alt="reddit"
             className="w-[90px] h-[90px] rounded-full p-[8px]   relative bottom-8  "

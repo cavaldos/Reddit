@@ -1,12 +1,14 @@
 import { PiImageSquareBold } from "react-icons/pi";
 import { BsLink45Deg } from "react-icons/bs";
+import Image from "next/image";
+
 const CreatePost: React.FC = () => {
   return (
     <>
       <div
        
         className="flex flex-row bg-darkcontent border rounded-[4px] border-gray-600  hover:border-gray-500 h-[60px] mb-2">
-        <img
+        <Image
           src="./reddit.svg"
           alt="reddit"
           className="w-[52px] h-[52px] object-contain rounded-full p-[8px]  my-auto"

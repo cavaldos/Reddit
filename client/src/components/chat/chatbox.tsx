@@ -12,6 +12,7 @@ import { togglechat } from "~/redux/features/tooglechatSlice";
 import { useSelector, useDispatch } from "react-redux";
 import axios from "axios";
 import { setReceiveID } from "~/redux/features/messageSlice";
+
 interface User {
   displayName: string;
   photoURL: string;
@@ -32,7 +33,7 @@ const UserWidget: React.FC<User> = ({ displayName, photoURL, email, uid }) => {
       >
         <div className="flex py-1  gap-2 justify-start hover:bg-[#3F4042] rounded-[5px]">
           <div className="w-[40px] h-[40px] ml-2  relative">
-            <img
+            <Image
               src={photoURL}
               alt="profile pic"
               className="w-[40px] h-[40px] rounded-full bg-transparent "

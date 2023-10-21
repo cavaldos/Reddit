@@ -1,9 +1,11 @@
+import Image from "next/image";
+
 const List: React.FC = () => {
   return (
     <>
       <div className="w-[320px] bg-[#1B1B1B] h-80 rounded-[5px] ml-auto pb-3 mt-9">
         <div className="flex border-b-[1px] border-gray-700 mt-2	 mx-4">
-          <img
+          <Image
             src="./reddit.svg"
             alt="reddit"
             className="w-[52px] h-[52px] object-contain rounded-full py-[8px]  my-auto"

@@ -18,7 +18,7 @@ const ChatIcon: React.FC = () => {
     <>
       <BsChatDots
         onClick={toggleChat}
-        className="text-white text-2xl ml-2 mt-1 mx-5 justify-end "
+        className="text-white text-2xl ml-2  mx-5 my-auto justify-end hover:cursor-pointer "
       />
     </>
   );

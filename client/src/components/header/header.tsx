@@ -22,7 +22,7 @@ const Header: React.FC = () => {
         <Select />
         <Search />
         <div className="flex  w-[500px] justify-end">
-          <BellOutlined className="text-white text-2xl ml-2 mb-1 justify-end" />
+          <BellOutlined className="text-white text-2xl ml-2 my-auto justify-end" />
           <ChatIcon />
           <Account />
         </div>

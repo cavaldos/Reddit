@@ -4,6 +4,7 @@ import { GoComment } from "react-icons/go";
 import { PiShareFat } from "react-icons/pi";
 import { BsBookmark } from "react-icons/bs";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 interface PostInterface {
   id: string;
@@ -43,7 +44,7 @@ const Post: React.FC = () => {
 
       <div className="bg-darkcontent w-full flex flex-col  rounded-r-[6px] ">
         <div className="h-[30px] flex">
-          <img
+        <Image
             src="https://www.redditstatic.com/avatars/avatar_default_19_0079D3.png"
             alt=""
             className="rounded-full h-[20px] w-[20px] mt-1 ml-2"

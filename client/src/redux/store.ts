@@ -19,7 +19,7 @@ const persistConfig = {
   key: "root",
   version: 1,
   storage,
-  whitelist: ["count", "theme"],
+  whitelist: ["count", "theme","user"],
 };
 const rootReducer = combineReducers({
   count: countSlice,

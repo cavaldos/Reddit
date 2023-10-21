@@ -8,6 +8,7 @@ import { BiSolidPlusCircle } from "react-icons/bi";
 
 import { connectWebSocket, sendMessage } from "~/utils/socket";
 import { useSelector, useDispatch } from "react-redux";
+import Image from "next/image";
 
 import { setChat } from "~/redux/features/messageSlice";
 const Guest = ({ id, createdAt, text, role }) => {
@@ -15,7 +16,7 @@ const Guest = ({ id, createdAt, text, role }) => {
     <>
       <div className="flex my-2  gap-2 justify-start">
         <div className="w-[30px] h-[30px] ml-2  ">
-          <img
+          <Image
             src="	https://www.redditstatic.com/avatars/avatar_default_02_0079D3.png"
             alt="profile pic"
             className="w-[30px] h-[30px] rounded-full bg-transparent "
@@ -43,7 +44,7 @@ const User = ({ id, createdAt, text, role }) => {
           <p className="font-medium text-[#eee] px-2 py-1">{text}</p>
         </div>
         <div className="w-[30px] h-[30px] mr-2  ">
-          <img
+          <Image
             src={user.photoURL}
             alt="https://www.redditstatic.com/avatars/avatar_default_02_0079D3.png"
             className="w-[30px] h-[30px] rounded-full bg-transparent "

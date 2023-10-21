@@ -52,14 +52,14 @@ const SignPage: React.FC = () => {
         console.log("result", result);
         console.log("result", result.user.accessToken);
         setToken(result.user.accessToken);
-        dispatch(
-          setUser({
-            uid: result.user.uid,
-            photoURL: result.user.photoURL,
-            disPlayName: result.user.disPlayName,
-            email: result.user.email,
-          })
-        );
+        // dispatch(
+        //   setUser({
+        //     uid: result.user.uid,
+        //     photoURL: result.user.photoURL,
+        //     disPlayName: result.user.disPlayName,
+        //     email: result.user.email,
+        //   })
+        // );
       })
       .catch((error) => {
         console.log("error");

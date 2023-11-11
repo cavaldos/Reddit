@@ -11,7 +11,7 @@
   "dependencies": {
     "@ant-design/icons": "^5.2.6",
     "@reduxjs/toolkit": "^1.9.5",
-    "axios": "^1.5.1",
+    "axios": "^1.6.0",
     "daisyui": "^3.8.2",
     "draft-js": "^0.11.7",
     "draftjs-to-html": "^0.9.1",
